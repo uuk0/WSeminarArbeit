@@ -87,36 +87,36 @@
 
     \section{Unvollständigkeit der rationale Zahlen}
 
-    Die rationalen Zahlen (\begin{math}\mathbb{Q}\end{math}) wurden zur Vervollständigung der ganzen Zahlen
-    (\begin{math}\mathbb{Z}\end{math}) definiert, in der die
+    Die rationalen Zahlen ($\mathbb{Q}$) wurden zur Vervollständigung der ganzen Zahlen
+    ($\mathbb{Z}$) definiert, in der die
     Umkehrfunktion der Multiplikation, die Division, nicht vollständig definiert ist.
     So ist die Zahl $2^{-1} = 0,5$ keine ganze Zahl.
 
     Doch auch die rationalen Zahlen sind auch nicht vollständig.
     Mit Einführung der Potenz und deren Umkehrung, der Wurzel, stellt sich das Problem, das z.B.
     $\sqrt{2}$ keine rationale Zahl ist.
+    
     Beweis:
     Gibt es eine rationale Zahl q mit $q=\frac{m}{n}$, sodass $q=\sqrt{2}$, so muss gelten:
     \begin{equation}
         q = \sqrt{2} \Leftrightarrow \frac{m}{n} = \sqrt{2} \Leftrightarrow \frac{m^2}{n^2} = 2 \Leftrightarrow m^2 = 2n^2
     \end{equation}
-    Also muss entweder \begin{math}m^2\end{math} oder \begin{math}n^2\end{math} ungerade viele 2-er in der
+    Also muss entweder $m^2$ oder $n^2$ ungerade viele 2-er in der
     Primzahlenzerlegung enthalten, was aber unmöglich ist, da Quadratzahlen Primfaktoren immer gerade oft enthalten.
+    
     Damit kann es keine rationale Zahl q geben, die die genannten Eigenschaften erfüllt, und damit kann auch
-    \begin{math}\sqrt{2}\end{math} keine rationale Zahl sein.
+    $\sqrt{2}$ keine rationale Zahl sein.
 
-    % Hier noch ein Beweis dessen?
+    \section{Näherung von $\sqrt{2}$}
 
-    \section{Näherung von \begin{math}\sqrt{2}\end{math}}
-
-    Wir können aber klar definieren, welche Zahlen kleiner und größer als \begin{math}+\sqrt{2}\end{math} sind:
+    Wir können aber klar definieren, welche rationalen Zahlen kleiner und größer als $\sqrt{2}$ sind:
     \begin{displaymath}\begin{split}
         \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n < 0 \lor n^2 < 2\} \\
         \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n > 0 \land n^2 > 2\}
     \end{split}\end{displaymath}
 
-    An dieser Stelle müssen wir die Bedingung $n > 0$ bzw. $n < 0$ einfügen, da $n^2=2$ zwei Lösungen besitzt,
-    an dieser Stelle aber nur die positive gesucht ist.
+    An dieser Stelle müssen wir die Bedingung $n > 0$ bzw. $n < 0$ einfügen, da $n ^ 2 = 2$ zwei Lösungen besitzt,
+    an dieser Stelle aber nur die Positive gesucht ist.
 
     Beide Mengen sind klar definiert, enthalten aber weder gemeinsame Elemente noch $\sqrt{2}$
     (Da diese keine rationale Zahl ist).
@@ -125,9 +125,9 @@
 
     \section{Formale Defintion Dedekind'scher Schnitte}
 
-    1. Ein Dedekind'scher Schnitte r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Z}$,
-    also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten Beschränkt ist,
-    d.h. eine rationale Zahl q existiert, für die $\forall k \in r: k \ge q$.
+    1. Ein Dedekind'scher Schnitt r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Z}$,
+    also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten beschränkt ist.
+    (Vgl. Begriffsdefinition im nachfolgendem Teil)
 
     2. Es muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b \ge a \rightarrow b \in r$, d.h.
     für eine rationale Zahl in einem dedekind'schen Schnitt müssen alle größeren rationalen Zahlen auch enthalten sein,
@@ -137,18 +137,23 @@
     also r besitzt keine kleinste rationale Zahl.
 
     Wir definieren nun die Menge $\mathbb{R}$ als die Menge aller dedekind'schen Schnitten, also der Menge aller
-    Elemetne der Potenzmenge der rationalen Zahlen, für die obige Eingenschaften gelten.
+    Elemente der Potenzmenge der rationalen Zahlen, für die obige Eingenschaften gelten.
 
     Anmerkung:
     Je nach Literatur wird ein dedekidsch'scher Schnitt auch als eine nach oben Beschränkte Teilmenge beschrieben.
 
     \section{Begriffsdefinitionen}
 
-    Supremum einer Menge M, die eine Teilmenge einer geordneten Menge N ist: das kleinste Element aus N, das größer als
-    alle Elemente aus M ist.
-    M kann so beschaffen sein, dass es keine solche Zahl gibt.
+    Zu einer Teilmenge m einer geordneten Menge M, wie sie die rationalen Zahlen darstellt, kann es obere und untere
+    Schranken geben.
 
-    Analog das Infimum als die größte Zahl, die kleiner als alle anderen Elemente ist.
+    Eine obere Schranke s ist ein Element aus M, für das alle Elemente aus m kleiner als s sind.
+
+    Eine untere Schranke analog für das alle Element aus m größer als s sind.
+
+    Besitzt M eine Schranke, spricht mann dass M nach der jeweiligen Seite beschränkt ist.
+
+    Weiterhin ist das Supremum die kleinste obere Schranke, und das Infinum die größte untere Schranke einer Menge M.
 
     \subsection{Eigenschaften der Mengenverschachtelungen:}
 
@@ -377,7 +382,7 @@
     Durch die Definition von I folgt, dass I eine Teilmenge von C ist, und damit alle C kleiner als I.
     Damit ist I die größte untere Schranke der Menge M.
 
-    Damit ist \mathbb{R} vollständig, da mit obigen Konstruktion allen reellen Zahlen ein Infinum, I, zugewiesen werden
+    Damit ist $\mathbb{R}$ vollständig, da mit obigen Konstruktion allen reellen Zahlen ein Infinum, I, zugewiesen werden
     können.
 
 
