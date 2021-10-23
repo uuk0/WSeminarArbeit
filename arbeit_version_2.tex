@@ -265,7 +265,7 @@
 
     Wir können d schreiben als:
 
-    \[d = \{m * n \mspace{4mu} | \mspace{4mu} m \in \{x * y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b}\} \land n \in c\}\]
+    \[d = \{m * n \mspace{4mu} | \mspace{4mu} m \in \{x * y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\} \land n \in c\}\]
 
     Und durch Vereinfachung:
 
@@ -275,6 +275,9 @@
 
     \[d = \{x * y * n \mspace{4mu} | \mspace{4mu} x \in a \land y \in b \land n \in c\}\]
 
+    Auf dem selben weg kommen wir zur geforderten Gleichung $d = a * (b * c)$, da die rationalen Zahlen
+    ebenfalls kommutativ sind.
+
     \subsubsection{Neutrales Element}
 
     Das neutrale Element der Multiplikation ist die `1`, also $\{q > 1 \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q}\}$
@@ -282,6 +285,28 @@
     Dabei ist klar, dass für einen positiven Schnitt a bei Multiplikation mit 1 für jedes Element aus a nur Elemente
     größer-gleich demselben entstehen, und damit keine kleineren Elemente dazukommen, sodass der Schnitt gleich
     bliebt.
+
+    \subsubsection{Inverse Element und die division}
+
+    Wir definieren:
+    \[a* := \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\}\]
+
+    a* ist nicht-leer und enthält nicht alle Elemente der rationalen Zahlen.
+
+    Aber wir stellen fest, dass diese Menge ein kleinstes Element haben kann.
+
+    Wir definieren also $a^{-1}$ als:
+
+    \[
+        a^{-1} \coloneqq
+        \begin{cases}
+            \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\} \mspace{4mu} wenn
+            \mspace{4mu} diese \mspace{4mu} kein \mspace{4mu} kleinstes \mspace{4mu} Element \mspace{4mu} hat \\
+            \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\} / \{kleinstes Element\} \mspace{4mu} sonst
+        \end{cases}
+    \]
+
+    \subsection{Distributivität}
 
     \newpage
 
@@ -297,6 +322,8 @@
     - Prof. Dr. Siegfried Echterhoff: Ergänzung zur Vorlesung Analysis I WS08/0, Konstruktion von $\mathbb{R}$,
     https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/Skript/
     Konstruktion\_reelle\_Zahlen.pdf, zuletzt abgerufen am 23.10.2021
+
+    - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf
 
     \newpage
 
