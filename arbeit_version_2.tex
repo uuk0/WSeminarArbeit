@@ -150,6 +150,16 @@
 
     Analog das Infimum als die größte Zahl, die kleiner als alle anderen Elemente ist.
 
+    \subsection{Eigenschaften der Mengenverschachtelungen:}
+
+    Sei A defniert durch $A = \{f(a) \mspace{4mu} | \mspace{4mu} a \in \{g(x) \mspace{4mu} | \mspace{4mu}  x \in I\}\}$.
+
+    Wir dürfen A umschreiben als:
+    $A = \{f(g(x)) \mspace{4mu} | \mspace{4mu} x \in I\}$
+
+    Ebenfalls gilt die Umkehrung.
+
+
     \section{Ordnung der reellen Zahlen}
 
     Seien a und b zwei dedekind'sche Schnitte. Wir definieren
@@ -176,7 +186,7 @@
 
     Und Operationsübergreifend:
 
-    - $\forall x, y, z \in M: (x + y) * z = x * z + y * z$ (Distributiv)
+    - $\forall x, y, z \in M: (x + y) * z = (x * z) + (y * z)$ (Distributiv)
 
     All diese sollen im folgenden für unser $\mathbb{R}$ bewiesen werden.
 
@@ -307,6 +317,28 @@
     \]
 
     \subsection{Distributivität}
+
+    Wir betrachten den Term $(A + B) * C$.
+    Für den Fall, dass $A, B, C > 0$ sind, gilt:
+
+    \[
+        (A + B) * C = \{x * c \mspace{4mu} | \mspace{4mu} x \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\} =
+    \]
+    \[
+        = \{(a + b) * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} =
+    \]
+    \[
+        = \{a * c + b * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} =
+    \]
+    \[
+        = \{x + y \mspace{4mu} | \mspace{4mu} x \in \{a * c \mspace{4mu} | \mspace{4mu} a \in A \land c \in C\} \land
+        \{b * c \mspace{4mu} | \mspace{4mu} b \in B \land c \in C\}\} =
+    \]
+    \[
+        = (A * C) + (B * C)
+    \]
+
+    % Hier noch die anderen Fälle: C < 0, A < 0, A < 0 und B < 0, C < 0 und A < 0, alle < 0
 
     \newpage
 
