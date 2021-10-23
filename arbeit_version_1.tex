@@ -1,0 +1,163 @@
+%! Author = Lukas Bilstein
+%! Date = 01.09.2021
+
+% Preamble
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{amsfonts}
+\usepackage[ngerman]{babel}
+
+\usepackage[a4paper, left=3.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+
+
+% Setup spacing
+\onehalfspacing
+
+
+% Document
+\begin{document}
+
+    \thispagestyle{empty}
+
+    {
+        \centering
+
+        \begin{singlespace}
+
+        \textbf{Hans-Sachs-Gymnasium Nürnberg}
+
+        \textbf{Oberstufenjahrgang 2020/2022}
+
+        \end{singlespace}
+
+        \bigskip
+
+        Seminarfach Mathematik
+
+        \bigskip
+
+        Seminararbeit
+
+        \bigskip
+        \bigskip
+
+        \textbf{Reelle Zahlen und ihre Arithmetik in der Darstellung der dedekind'schen Schnitten}
+
+        \bigskip
+        \bigskip
+
+    }
+
+    \hspace*{30mm}Verfasser: \hspace*{22mm} Lukas Bilstein
+
+    \bigskip
+
+    \hspace*{30mm}Kursleiter: \hspace*{20mm} OStR Dr. Dennis Simon
+
+    \bigskip
+
+    \hspace*{30mm}Bewertung der Arbeit: \hspace*{10mm} \line(1, 0){35mm}
+
+    \bigskip
+
+    \hspace*{30mm}Bewertung der Präsentation: \line(1, 0){35mm}
+
+    \bigskip
+    \bigskip
+    \bigskip
+    \bigskip
+    \bigskip
+
+    \hspace*{30mm}Unterschrift Kursleiter: \hspace*{8mm} \line(1, 0){45mm}
+
+    \newpage
+
+    \thispagestyle{empty}
+
+    \tableofcontents
+
+    \newpage
+
+    \setcounter{page}{3}
+
+    \section{Unvollständigkeit der rationale Zahlen}
+
+    Die rationalen Zahlen (\begin{math}\mathbb{Q}\end{math}) wurden zur Vervollständigung der ganzen Zahlen
+    (\begin{math}\mathbb{Z}\end{math}) definiert, in der die
+    Umkehrfunktion der Multiplikation, die Division, nicht vollständig definiert ist.
+
+    Doch auch die rationalen Zahlen sind auch nicht vollständig.
+    Mit Einführung der Potenz und deren Umkehrung, der Wurzel, stellt sich das Problem, das z.B.
+    \begin{math}\sqrt{2}\end{math} keine rationale Zahl ist.
+    Beweis:
+    Gibt es eine rationale Zahl q mit \begin{math}q=m/n\end{math}, sodass \begin{math}q=\sqrt{2}\end{math}, so muss gelten:
+    \begin{equation}
+        q = \sqrt{2} \Leftrightarrow m/n = \sqrt{2} \Leftrightarrow m^2/n^2=2 \Leftrightarrow m^2 = 2n^2
+    \end{equation}
+    Also muss entweder \begin{math}m^2\end{math} oder \begin{math}n^2\end{math} ungerade viele 2-er in der
+    Primzahlenzerlegung enthalten, was aber unmöglich ist, da Quadratzahlen Primfaktoren immer gerade oft enthalten.
+    Damit kann es keine rationale Zahl q geben, die die genannten Eigenschaften erfüllt, und damit kann auch
+    \begin{math}\sqrt{2}\end{math} keine rationale Zahl sein.
+
+    % Hier noch ein Beweis dessen?
+
+    \section{Näherung von \begin{math}\sqrt{2}\end{math}}
+
+    Wir können aber klar definieren, welche Zahlen kleiner und größer als \begin{math}\sqrt{2}\end{math} sind:
+    \begin{displaymath}\begin{split}
+        \{n \in \mathbb{N} | n < 0 \lor n^2 < 2\} \\
+        \{n \in \mathbb{N} | n > 0 \land n^2 > 2\}
+    \end{split}\end{displaymath}
+
+    Beide Mengen sind klar definiert, enthalten aber weder gemeinsame Elemente noch $\sqrt{2}$
+    (Da diese keine rationale Zahl ist).
+
+    Wir wollen im folgendem die untere Menge als Dedekind'scher Schnitt bezeichnen.
+
+    \section{Formale Defintion Dedekind'scher Schnitte}
+
+    Ein Dedekind'scher Schnitte r ist eine Teilmenge der rationalen Zahlen $\mathbb{Z}$, welche nach oben Beschränkt ist, d.h.
+    eine rationale Zahl q existiert, für die $\forall k \in r: k <= q$.
+    Desweiteren muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b <= a \rightarrow b \in r$
+
+    \newpage
+
+    \appendix
+
+    \newpage
+
+    \section{Literaturverzeichnis}
+
+    Uwe Storch, Hartmut Wiebe: Grundkonzepte der Mathematik: Mengentheoretische, algebraische, topologische Grundlagen
+    sowie reelle und komplexe Zahlen, Springer Spektrum Verlag
+
+    Prof. Dr. Siegfried Echterhoff: Ergäanzung zur Vorlesung Analysis I WS08/0, Konstruktion von R,
+    $https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/Skript/Konstruktion_reelle_Zahlen.pdf$
+    Zuletzt abgerufen am 02.10.2021
+
+    \newpage
+
+    \fbox{\parbox{\linewidth}{
+
+    \textit{Ich erkläre hiermit, dass ich die Seminararbeit ohne fremde Hilfe angefertigt und nur die im
+    Literaturverzeichnis angeführten Quellen und Hilfsmittel benützt habe.}
+
+    \bigskip
+
+    ........................................, den ......................................
+    \\[-0.2cm]\hspace*{22mm} Ort \hspace*{55mm} Datum
+
+    \bigskip
+    \bigskip
+
+    ................................................................................................................
+    \\[-0.2cm]Unterschrift des Verfassers
+    }}
+
+
+
+\end{document}

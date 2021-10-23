@@ -1,0 +1,285 @@
+%! Author = Lukas Bilstein
+%! Date = 01.09.2021
+
+% Preamble
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{amsfonts}
+\usepackage[ngerman]{babel}
+
+\usepackage[a4paper, left=3.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+\usepackage{mathtools}
+
+
+% Setup spacing
+\onehalfspacing
+
+
+% Document
+\begin{document}
+
+    \thispagestyle{empty}
+
+    {
+        \centering
+
+        \begin{singlespace}
+
+        \textbf{Hans-Sachs-Gymnasium Nürnberg}
+
+        \textbf{Oberstufenjahrgang 2020/2022}
+
+        \end{singlespace}
+
+        \bigskip
+
+        Seminarfach Mathematik
+
+        \bigskip
+
+        Seminararbeit
+
+        \bigskip
+        \bigskip
+
+        \textbf{Reelle Zahlen und ihre Arithmetik in der Darstellung der dedekind'schen Schnitten}
+
+        \bigskip
+        \bigskip
+
+    }
+
+    \hspace*{30mm}Verfasser: \hspace*{22mm} Lukas Bilstein
+
+    \bigskip
+
+    \hspace*{30mm}Kursleiter: \hspace*{20mm} OStR Dr. Dennis Simon
+
+    \bigskip
+
+    \hspace*{30mm}Bewertung der Arbeit: \hspace*{10mm} \line(1, 0){35mm}
+
+    \bigskip
+
+    \hspace*{30mm}Bewertung der Präsentation: \line(1, 0){35mm}
+
+    \bigskip
+    \bigskip
+    \bigskip
+    \bigskip
+    \bigskip
+
+    \hspace*{30mm}Unterschrift Kursleiter: \hspace*{8mm} \line(1, 0){45mm}
+
+    \newpage
+
+    \thispagestyle{empty}
+
+    \tableofcontents
+
+    \newpage
+
+    \setcounter{page}{3}
+
+    \section{Unvollständigkeit der rationale Zahlen}
+
+    Die rationalen Zahlen (\begin{math}\mathbb{Q}\end{math}) wurden zur Vervollständigung der ganzen Zahlen
+    (\begin{math}\mathbb{Z}\end{math}) definiert, in der die
+    Umkehrfunktion der Multiplikation, die Division, nicht vollständig definiert ist.
+    So ist die Zahl $2^{-1} = 0,5$ keine ganze Zahl.
+
+    Doch auch die rationalen Zahlen sind auch nicht vollständig.
+    Mit Einführung der Potenz und deren Umkehrung, der Wurzel, stellt sich das Problem, das z.B.
+    $\sqrt{2}$ keine rationale Zahl ist.
+    Beweis:
+    Gibt es eine rationale Zahl q mit $q=\frac{m}{n}$, sodass $q=\sqrt{2}$, so muss gelten:
+    \begin{equation}
+        q = \sqrt{2} \Leftrightarrow \frac{m}{n} = \sqrt{2} \Leftrightarrow \frac{m^2}{n^2} = 2 \Leftrightarrow m^2 = 2n^2
+    \end{equation}
+    Also muss entweder \begin{math}m^2\end{math} oder \begin{math}n^2\end{math} ungerade viele 2-er in der
+    Primzahlenzerlegung enthalten, was aber unmöglich ist, da Quadratzahlen Primfaktoren immer gerade oft enthalten.
+    Damit kann es keine rationale Zahl q geben, die die genannten Eigenschaften erfüllt, und damit kann auch
+    \begin{math}\sqrt{2}\end{math} keine rationale Zahl sein.
+
+    % Hier noch ein Beweis dessen?
+
+    \section{Näherung von \begin{math}\sqrt{2}\end{math}}
+
+    Wir können aber klar definieren, welche Zahlen kleiner und größer als \begin{math}+\sqrt{2}\end{math} sind:
+    \begin{displaymath}\begin{split}
+        \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n < 0 \lor n^2 < 2\} \\
+        \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n > 0 \land n^2 > 2\}
+    \end{split}\end{displaymath}
+
+    An dieser Stelle müssen wir die Bedingung $n > 0$ bzw. $n < 0$ einfügen, da $n^2=2$ zwei Lösungen besitzt,
+    an dieser Stelle aber nur die positive gesucht ist.
+
+    Beide Mengen sind klar definiert, enthalten aber weder gemeinsame Elemente noch $\sqrt{2}$
+    (Da diese keine rationale Zahl ist).
+
+    Wir wollen im folgendem die `obere` Menge als Dedekind'scher Schnitt bezeichnen.
+
+    \section{Formale Defintion Dedekind'scher Schnitte}
+
+    1. Ein Dedekind'scher Schnitte r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Z}$,
+    also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten Beschränkt ist,
+    d.h. eine rationale Zahl q existiert, für die $\forall k \in r: k \ge q$.
+
+    2. Es muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b \ge a \rightarrow b \in r$, d.h.
+    für eine rationale Zahl in einem dedekind'schen Schnitt müssen alle größeren rationalen Zahlen auch enthalten sein,
+    also der Schnitt soll keine `Lücken` haben.
+
+    3. Für einen dedekind'schen Schnitt r gibt es keine rationale Zahl q, für die $q \in r$ und $\forall x \in r: q \le x$,
+    also r besitzt keine kleinste rationale Zahl.
+
+    Wir definieren nun die Menge $\mathbb{R}$ als die Menge aller dedekind'schen Schnitten, also der Menge aller
+    Elemetne der Potenzmenge der rationalen Zahlen, für die obige Eingenschaften gelten.
+
+    Anmerkung:
+    Je nach Literatur wird ein dedekidsch'scher Schnitt auch als eine nach oben Beschränkte Teilmenge beschrieben.
+
+    \section{Begriffsdefinitionen}
+
+    Supremum einer Menge M, die eine Teilmenge einer geordneten Menge N ist: das kleinste Element aus N, das größer als
+    alle Elemente aus M ist.
+    M kann so beschaffen sein, dass es keine solche Zahl gibt.
+
+    Analog das Infimum als die größte Zahl, die kleiner als alle anderen Elemente ist.
+
+    \section{}
+
+    \section{Der Körper der reelle Zahlen}
+
+    Ein Körper ist ein System aus einer Menge M, und zwei Operationen `+' und `*', die je zwei Elementen aus der Menge
+    M einem der gleichen zuordnet.
+
+    Für die Operationen `+' und `*' muss jeweils gelten (wobei $\emptyset$ ein eindeutiges neutrales Element für
+    die Operation darstellt):
+
+    - $\forall x, y, t \in M: x \bigoplus (y \bigoplus z) = (x \bigoplus y) \bigoplus z$  (Assoziativ)
+
+    - $\forall x, y \in M: x \bigoplus y = y \bigoplus x$  (Kommutativ)
+
+    - $\exists x \in M: \forall y \in M: x \bigoplus y = y$  (Existenz eines neutralen Elements)
+
+    - $\forall x \in M: \exists y \in M: x \bigoplus y = \emptyset$  (Existenz einer Inversen)
+
+    Und Operationsübergreifend:
+
+    - $\forall x, y, z \in M: (x + y) * z = x * z + y * z$ (Distributiv)
+
+    All diese sollen im folgenden für unser $\mathbb{R}$ bewiesen werden.
+
+    \subsection{Addition dedekind'scher Schnitte}
+
+    Wir definieren zunächst die Addition folgendermaßen:
+
+    $a + b \coloneqq \{x + y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\}$ [1]
+
+    Wir müssen zunächst beweisen, dass $a + b$ tatsächlich ein dedekind'scher Schnitt ist.
+
+    Es ist klar, dass $a + b$ keine leere Menge ist, und eine Teilmenge der rationalen Zahlen, da wir deren Addition
+    hier verwenden.
+
+    Es ist ebenfalls klar, das $a + b$ keine Lücken hat.
+    Sei m eine Zahl aus dem Schnitt $a + b$ und n eine Zahl die größer als m ist, aber nicht in $a + b$ enthalten ist.
+    Sei $x \in a$ und $y \in b$, sodass $x + y = m$. Da a neben x auch die Zahl $x + (n - m)$ enthalten muss,
+    muss auch $x + (n - m) + y$ in $a + b$ enthalten sein. Ersetzen von $x + y$ durch m ergibt $n - m + m = n$,
+    was bedeutet, dass n auch in $a + b$ enthalten sein muss, was aber im widerspruch zu unser Annahme steht.
+
+    Sei $x + y$ das kleinstes Element in $a + b$. Sei weiterhin x' ein Element aus a.
+    Sei $y' = x + y - x'$. Diese Zahl kann nicht $\in b$ sein, da sonst $x' + y' > x + y \Leftrightarrow y' > x + y - y'$.
+    Das steht im Widerspruch zur Annahmne, dass $x + y \in a + b$, da per Definition der Additon nur solche Elemente
+    in $a + b$ enthalten sind, für die $x \in a$ und $y \ in b$.
+
+    \subsubsection{Kommutativität und neutrales Element}
+
+    Die Kommutativität folgt aus der Kommutativität der rationalen Zahlen, bei austausch von a und b in [1].
+
+    Das neutrale Element ist die Menge $\{a > 0 \mspace{4mu} | \mspace{4mu} a \in \mathbb{Q}\}$.
+    Bei Addition kommen nur Elemente kleiner-gleich der ursprünglichen Elemente heraus, und damit bleibt
+    der dedekidsch'sche Schnitt identisch.
+    (Da ein dedekidsch'scher Schnitt keine Lücken in den rationale Zahlen hat)
+
+    \subsubsection{Assoziativität}
+
+    Wir können $A+(B+C)$ schreiben als:
+    \[\{a+d \mspace{4mu} | \mspace{4mu} a \in A \land d \in \{b + c \mspace{4mu} | \mspace{4mu} b \in B \land c \in C\}\}\]
+    Was wir umschrieben dürfen als:
+    \[\{a+b+c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\}\]
+    Und auf selbe weise in $(A+B)+B$ umformen dürfen.
+
+    \subsubsection{Inverse Element und Subtraktion}
+
+    Wir schreiben das Inversum von A als $-A$ und definieren es als:
+
+    \[-A \coloneqq \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a + b > 0 \land a \in A\}\]
+
+    % hier noch ein Beweis der Eigenschaften 1 - 30mm
+
+
+    Weiterhin ist damit der Betrag eines dedekidsch'schen Schnittes definiert als:
+    \[|A| := \begin{cases}A \mspace{10mu} wenn \mspace{6mu} A \ge 0 \\ -A \mspace{10mu} sonst\end{cases}\]
+
+    \subsection{Multiplikation dedekidsch'scher Schnitte}
+
+    Wir definieren $A \times B$ für zwei positive dedekidsch'sche Schnitte A und B folgendermaßen:
+
+    \[A \times B \coloneqq \overline{\{a * b \mspace{4mu} | \mspace{4mu} a \in \overline{A} \land b \in \overline{B}}\]
+
+    Und wie bei der Multiplikation üblich, erweitert für beliebige Schnitte:
+
+    \[
+        A * B \coloneqq \begin{cases}
+            |A| \times |B| \mspace{10mu} wenn (A > 0 \land b > 0) \lor (A < 0 \land B < 0) \\
+            -(|A| \times |B|) \mspace{10mu} sonst
+        \end{cases}
+    \]
+
+    Die Assoziativität für positive Schnitte ist wie bei der Addition klar ersichtlich, ebenso bei zwei negativen.
+    Für einen positiven und einen negativen brauchen wir nur uns das - vor dem Ergebnis wegdenken
+    (- ist eine eindeutige, symmetrische Operation).
+
+    \subsubsection{Neutrales Element}
+
+
+    \newpage
+
+    \appendix
+
+    \newpage
+
+    \section{Literaturverzeichnis}
+
+    - Uwe Storch, Hartmut Wiebe: Grundkonzepte der Mathematik: Mengentheoretische, algebraische, topologische Grundlagen
+    sowie reelle und komplexe Zahlen, Springer Spektrum Verlag
+
+    - Prof. Dr. Siegfried Echterhoff: Ergänzung zur Vorlesung Analysis I WS08/0, Konstruktion von $\mathbb{R}$,
+    https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/Skript/
+    Konstruktion\_reelle\_Zahlen.pdf, zuletzt abgerufen am 02.10.2021
+
+    \newpage
+
+    \fbox{\parbox{\linewidth}{
+
+    \textit{Ich erkläre hiermit, dass ich die Seminararbeit ohne fremde Hilfe angefertigt und nur die im
+    Literaturverzeichnis angeführten Quellen und Hilfsmittel benützt habe.}
+
+    \bigskip
+
+    ........................................, den ......................................
+    \\[-0.2cm]\hspace*{22mm} Ort \hspace*{55mm} Datum
+
+    \bigskip
+    \bigskip
+
+    ................................................................................................................
+    \\[-0.2cm]Unterschrift des Verfassers
+    }}
+
+
+\end{document}
