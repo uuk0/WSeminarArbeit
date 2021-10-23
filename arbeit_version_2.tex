@@ -249,18 +249,39 @@
         \begin{cases}
             A \times B \mspace{4mu} wenn \mspace{4mu} A \ge 0 \mspace{4mu} und \mspace{4mu} B \ge 0 \\
             -A \times -B \mspace{4mu} wenn \mspace{4mu} A < 0 \mspace{4mu} und \mspace{4mu} B < 0 \\
-            -A \times B \mspace{4mu} wenn \mspace{4mu} A < 0 \mspace{4mu} und \mspace{4mu} B \ge 0  \\
-            A \times -B \mspace{4mu} wenn \mspace{4mu} A \ge 0 \mspace{4mu} und \mspace{4mu} B < 0
+            -(-A \times B) \mspace{4mu} wenn \mspace{4mu} A < 0 \mspace{4mu} und \mspace{4mu} B \ge 0  \\
+            -(A \times -B) \mspace{4mu} wenn \mspace{4mu} A \ge 0 \mspace{4mu} und \mspace{4mu} B < 0
         \end{cases}
     \]
 
-    Die Assoziativität für positive Schnitte ist wie bei der Addition klar ersichtlich, ebenso bei zwei negativen.
+    Die Kommutativität für positive Schnitte ist wie bei der Addition klar ersichtlich, ebenso bei zwei negativen.
     Für einen positiven und einen negativen brauchen wir nur uns das - vor dem Ergebnis wegdenken
     (- ist eine eindeutige, symmetrische Operation).
+
+    \subsubsection{Assoziativität}
+
+    Seien a, b und c drei dedekind'sche Schnitte, und d = (a * b) * c.
+    Der einfachheit halber seien a, b und c zunächst positiv.
+
+    Wir können d schreiben als:
+
+    \[d = \{m * n \mspace{4mu} | \mspace{4mu} m \in \{x * y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b}\} \land n \in c\}\]
+
+    Und durch Vereinfachung:
+
+    \[d = \{(x * y) * n \mspace{4mu} | \mspace{4mu} (x \in a \land y \in b) \land n \in c\}\]
+
+    Und weiterhin:
+
+    \[d = \{x * y * n \mspace{4mu} | \mspace{4mu} x \in a \land y \in b \land n \in c\}\]
 
     \subsubsection{Neutrales Element}
 
     Das neutrale Element der Multiplikation ist die `1`, also $\{q > 1 \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q}\}$
+
+    Dabei ist klar, dass für einen positiven Schnitt a bei Multiplikation mit 1 für jedes Element aus a nur Elemente
+    größer-gleich demselben entstehen, und damit keine kleineren Elemente dazukommen, sodass der Schnitt gleich
+    bliebt.
 
     \newpage
 
