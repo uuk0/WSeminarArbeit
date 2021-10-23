@@ -213,11 +213,15 @@
 
     \subsubsection{Assoziativität}
 
-    Wir können $A+(B+C)$ schreiben als:
+    Wir können $A + (B + C)$ schreiben als:
     \[\{a+d \mspace{4mu} | \mspace{4mu} a \in A \land d \in \{b + c \mspace{4mu} | \mspace{4mu} b \in B \land c \in C\}\}\]
+
     Was wir umschrieben dürfen als:
     \[\{a+b+c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\}\]
-    Und auf selbe weise in $(A+B)+B$ umformen dürfen.
+
+    Und auf selbe Weise in $(A + B) + B$ umformen dürfen.
+
+    % Dies könnten wir hier noch ausführen, wenn wir noch was brauchen
 
     \subsubsection{Inverse Element und Subtraktion}
 
@@ -235,14 +239,18 @@
 
     Wir definieren $A \times B$ für zwei positive dedekidsch'sche Schnitte A und B folgendermaßen:
 
-    \[A \times B \coloneqq \overline{\{a * b \mspace{4mu} | \mspace{4mu} a \in \overline{A} \land b \in \overline{B}}\]
+    \[A \times B \coloneqq \{a * b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\]
 
-    Und wie bei der Multiplikation üblich, erweitert für beliebige Schnitte:
+    % hier noch Beweis der Eigenschaften 1 - 3
 
+    Und für beliebige Schnitte A und B:
     \[
-        A * B \coloneqq \begin{cases}
-            |A| \times |B| \mspace{10mu} wenn (A > 0 \land b > 0) \lor (A < 0 \land B < 0) \\
-            -(|A| \times |B|) \mspace{10mu} sonst
+        A * B \coloneqq
+        \begin{cases}
+            A \times B \mspace{4mu} wenn \mspace{4mu} A \ge 0 \mspace{4mu} und \mspace{4mu} B \ge 0 \\
+            -A \times -B \mspace{4mu} wenn \mspace{4mu} A < 0 \mspace{4mu} und \mspace{4mu} B < 0 \\
+            -A \times B \mspace{4mu} wenn \mspace{4mu} A < 0 \mspace{4mu} und \mspace{4mu} B \ge 0  \\
+            A \times -B \mspace{4mu} wenn \mspace{4mu} A \ge 0 \mspace{4mu} und \mspace{4mu} B < 0
         \end{cases}
     \]
 
@@ -252,6 +260,7 @@
 
     \subsubsection{Neutrales Element}
 
+    Das neutrale Element der Multiplikation ist die `1`, also $\{q > 1 \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q}\}$
 
     \newpage
 
