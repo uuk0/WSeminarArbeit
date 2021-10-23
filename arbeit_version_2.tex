@@ -296,7 +296,7 @@
     größer-gleich demselben entstehen, und damit keine kleineren Elemente dazukommen, sodass der Schnitt gleich
     bliebt.
 
-    \subsubsection{Inverse Element und die division}
+    \subsubsection{Inverse Element und die Division}
 
     Wir definieren:
     \[a* := \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\}\]
@@ -340,11 +340,66 @@
 
     % Hier noch die anderen Fälle: C < 0, A < 0, A < 0 und B < 0, C < 0 und A < 0, alle < 0
 
+    \section{Abgrenzung zu den rationalen Zahlen}
+
+    Nachdem wir anfangs herausgefunden hatten, dass Zahlen wie $\sqrt{2}$ keine rationalen Zahlen sind, stellt sich
+    die Frage, ob wir diese Eigenschaft nicht mathematisch festhalten können.
+
+    Dafür betrachten wir unser Beispiel, den dedekind'schen Schnitt zu $\sqrt{2}$.
+    Diese Menge besitzt kein Infinum, da die Zahl $\sqrt{2}$, welche nicht Teil des dedekind'schen Schnittes ist,
+    keine rationale Zahl ist, sich aber beliebig annähern lässt, und somit zu jeder rationalen Zahl kleiner als
+    $\sqrt{2}$ eine existiert, die näher an $\sqrt{2}$ ist.
+
+    Wir definieren darauf den Begriff der Vollständigkeit.
+    Eine geordnete Menge M ist genau dann Vollständig, wenn alle Teilmengen von M, die nach unten beschränkt sind,
+    ein Infinum besitzen.
+
+    Für die Menge $\mathbb{Q}$ ist der Schnitt $\sqrt{2}$ ein Gegenbeispiel, der nach Definition
+    der dedekind'schen Schnitte eine Teilmenge von $\mathbb{Q}$ ist.
+    Also ist $\mathbb{Q}$ nicht vollständig.
+
+    \subsection{Die vollständigkeit der reellen Zahlen}
+
+    Sei M eine nicht-leere nach unten beschränkte Teilmenge von $\mathbb{R}$, und C eine untere Schranke von $\mathbb{R}$.
+
+    Sei
+    \[I = \bigcup \limits_{a \in M} a \subseteq M\]
+
+    Da alle Elemente aus M dicht sind, und nach oben bis $\inf$ gehen, muss I ebenfalls dicht sein.
+    I besitzt weiterhin kein kleinstes Element, da die kleinsten Elemente aus dem kleinsten Schnitt aus M kommen.
+    I ist nach unten beschränkt, da alle Elemente aus M nach unten beschränkt sind.
+
+    Also muss I wieder ein dedekind'scher Schnitt sein.
+
+    Es gilt $I \le a$ für alle $a \in M$, da $\forall m \in M: m \subseteq I$. (Eigenschaften der Vereinigungsmenge)
+
+    % Hier noch etwas genauer...
+    Durch die Definition von I folgt, dass I eine Teilmenge von C ist, und damit alle C kleiner als I.
+    Damit ist I die größte untere Schranke der Menge M.
+
+    Damit ist \mathbb{R} vollständig, da mit obigen Konstruktion allen reellen Zahlen ein Infinum, I, zugewiesen werden
+    können.
+
+
+    \section{Ausblick}
+
+    In der Einleitung haben wir $\sqrt{2}$ betrachtet, und gemerkt, dass sie keine rationale Zahl ist.
+    Dies lässt sich einfach auf alle weiteren positiven rationale Zahlen erweitern, wobei nur die Quadrate von rationalen Zahlen
+    rationale Wurzeln besitzen.
+
+    Doch der dedekind'sche Schnitt für -1, also $\{a \mspace{4mu} | \mspace{4mu} a^2 > -1\}$, ist gleich $\mathbb{Q}$,
+    da dass Quadrat einer rationalen Zahl nie negativ sein kann.
+    Wir können an dieser Stelle auch nicht einfach wieder `dedekind'sche Schnitte` über den reellen Zahlen bilden,
+    da die reellen Zahlen ebenfalls diese Eigenschaft besitzen.
+
+    Wir wollen also eigentlich neue Zahlen konstruieren, für die Wurzeln auf beliebige Zahlen, nicht nur postitive,
+    definiert sind.
+
     \newpage
 
-    \appendix
+%     \appendix
 
-    \newpage
+%     \newpage
 
     \section{Literaturverzeichnis}
 
