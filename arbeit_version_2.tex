@@ -87,65 +87,83 @@
 
     \section{Unvollständigkeit der rationale Zahlen}
 
-    Die rationalen Zahlen ($\mathbb{Q}$) wurden zur Vervollständigung der ganzen Zahlen
-    ($\mathbb{Z}$) definiert, in der die
-    Umkehrfunktion der Multiplikation, die Division, nicht vollständig definiert ist.
-    So ist die Zahl $2^{-1} = 0,5$ keine ganze Zahl.
+    Nach der Definition der Multiplikation in den ganzen Zahlen $\mathbb{Z}$, stellten wir fest, dass
+    die Umkehrung der Multiplikation, die Division, nicht für alle Paare ganzer Zahlen definiert ist.
+    So ist $\frac{1}{2}$ keine ganze Zahl.
+
+    Daraufhin haben wir die rationalen Zahlen eingeführt, welche ebendiese Lücke gefüllt haben.
 
     Doch auch die rationalen Zahlen sind auch nicht vollständig.
-    Mit Einführung der Potenz und deren Umkehrung, der Wurzel, stellt sich das Problem, das z.B.
-    $\sqrt{2}$ keine rationale Zahl ist.
+    Die Gleichung $a^2 = a * a = 2$ hat keine Lösung in den rationalen Zahlen.
     
     Beweis:
-    Gibt es eine rationale Zahl q mit $q=\frac{m}{n}$, sodass $q=\sqrt{2}$, so muss gelten:
+    Gibt es eine rationale Zahl q mit $q = \frac{m}{n}$, sodass $q = \sqrt{2}$, so muss gelten:
     \begin{equation}
         q = \sqrt{2} \Leftrightarrow \frac{m}{n} = \sqrt{2} \Leftrightarrow \frac{m^2}{n^2} = 2 \Leftrightarrow m^2 = 2n^2
     \end{equation}
+
     Also muss entweder $m^2$ oder $n^2$ ungerade viele 2-er in der
     Primzahlenzerlegung enthalten, was aber unmöglich ist, da Quadratzahlen Primfaktoren immer gerade oft enthalten.
     
-    Damit kann es keine rationale Zahl q geben, die die genannten Eigenschaften erfüllt, und damit kann auch
-    $\sqrt{2}$ keine rationale Zahl sein.
+    Damit kann es keine rationale Zahl q geben, die die obige Gleichung erfüllt.
+
+    Weiterhin gilt dies für alle rationalen Zahlen, welche sich nicht als Quotient zweier Quadratzahlen darstellen
+    lassen.
 
     \section{Näherung von $\sqrt{2}$}
 
-    Wir können aber klar definieren, welche rationalen Zahlen kleiner und größer als $\sqrt{2}$ sind:
-    \begin{displaymath}\begin{split}
-        \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n < 0 \lor n^2 < 2\} \\
-        \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n > 0 \land n^2 > 2\}
-    \end{split}\end{displaymath}
+    Wir können aber klar definieren, welche rationalen Zahlen kleiner bzw. größer als $\sqrt{2}$ sind:
+
+    \[\{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n < 0 \lor n^2 < 2\}\]
+
+    \[\{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n > 0 \land n^2 > 2\}\]
 
     An dieser Stelle müssen wir die Bedingung $n > 0$ bzw. $n < 0$ einfügen, da $n ^ 2 = 2$ zwei Lösungen besitzt,
     an dieser Stelle aber nur die Positive gesucht ist.
 
-    Beide Mengen sind klar definiert, enthalten aber weder gemeinsame Elemente noch $\sqrt{2}$
-    (Da diese keine rationale Zahl ist).
+    Beide Mengen sind klar definiert, enthalten aber weder gemeinsame Elemente noch $\sqrt{2}$.
+    (Da diese keine rationale Zahl ist)
 
     Wir wollen im folgendem die `obere` Menge als Dedekind'scher Schnitt bezeichnen.
 
     \section{Formale Defintion Dedekind'scher Schnitte}
 
     1. Ein Dedekind'scher Schnitt r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Z}$,
-    also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten beschränkt ist.
-    (Vgl. Begriffsdefinition im nachfolgendem Teil)
+    also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten beschränkt ist,
+    (Vgl. Begriffsdefinition im nachfolgendem Teil) und nicht gleich den rationalen Zahlen selbst ist.
 
     2. Es muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b \ge a \rightarrow b \in r$, d.h.
     für eine rationale Zahl in einem dedekind'schen Schnitt müssen alle größeren rationalen Zahlen auch enthalten sein,
-    also der Schnitt soll keine `Lücken` haben.
+    sodass der dedekind'sche Schnitt keine `Lücken` hatt.
 
     3. Für einen dedekind'schen Schnitt r gibt es keine rationale Zahl q, für die $q \in r$ und $\forall x \in r: q \le x$,
     also r besitzt keine kleinste rationale Zahl.
 
     Wir definieren nun die Menge $\mathbb{R}$ als die Menge aller dedekind'schen Schnitten, also der Menge aller
-    Elemente der Potenzmenge der rationalen Zahlen, für die obige Eingenschaften gelten.
+    Elemente der Potenzmenge der rationalen Zahlen, für die obige drei Eingenschaften gelten.
 
     Anmerkung:
-    Je nach Literatur wird ein dedekidsch'scher Schnitt auch als eine nach oben Beschränkte Teilmenge beschrieben.
+    Je nach Literatur wird ein dedekidsch'scher Schnitt auch als eine nach oben Beschränkte Teilmenge beschrieben,
+    welche kein größtes Element besitzt.
+
+    \subsection{Übergang von den rationalen Zahlen zu den reellen Zahlen}
+
+    Wir müssen eine Funktion definieren, die jeder rationalen Zahlen q einen dedekind'schen Schnitt r zuordnet.
+
+    Eine solche Funktion ist:
+
+    \[r = \{x > q \mspace{4mu} | \mspace{4mu} x \in \mathbb{Q}\}\]
+
+    Im folgenden werden wir sehen, dass diese Definition die Eigenschaften der rationalen Zahlen erhält, wenn
+    wir deren dedekind'sche Schnitt betrachten.
+
+    Das Infimum eines solchen Schnittes ist die rationale Zahl selbst, die diesen Schnitt beschreibt.
+    Wir werden später feststellen, das nicht alle dedekind'schen Schnitte ein rationales Infinum besitzen.
 
     \section{Begriffsdefinitionen}
 
-    Zu einer Teilmenge m einer geordneten Menge M, wie sie die rationalen Zahlen darstellt, kann es obere und untere
-    Schranken geben.
+    Zu einer Teilmenge m einer Menge M mit einer Ordnung, wie sie die Menge der rationalen Zahlen darstellt,
+    kann es obere und untere Schranken geben.
 
     Eine obere Schranke s ist ein Element aus M, für das alle Elemente aus m kleiner als s sind.
 
@@ -153,29 +171,28 @@
 
     Besitzt M eine Schranke, spricht mann dass M nach der jeweiligen Seite beschränkt ist.
 
-    Weiterhin ist das Supremum die kleinste obere Schranke, und das Infimum die größte untere Schranke einer Menge M.
+    Weiterhin ist das Supremum die kleinste obere Schranke, und das Infimum die größte untere Schranke einer Menge m.
 
-    \subsection{Eigenschaften der Mengenverschachtelungen:}
+    \subsection{Eigenschaften von Mengendefinitionsverschachtelungen}
 
     Sei A definiert durch $A = \{f(a) \mspace{4mu} | \mspace{4mu} a \in \{g(x) \mspace{4mu} | \mspace{4mu}  x \in I\}\}$.
 
     Wir dürfen A umschreiben als:
     $A = \{f(g(x)) \mspace{4mu} | \mspace{4mu} x \in I\}$
 
-    Ebenfalls gilt die Umkehrung und die Erweiterung auf Mehrvariablige Funktionen.
+    Ebenfalls gilt die Umkehrung und die Erweiterung auf mehr-variabligen Funktionen.
 
-
-    \section{Ordnung der reellen Zahlen}
+    \section{Ordnung in den reellen Zahlen}
 
     Seien a und b zwei dedekind'sche Schnitte. Wir definieren
 
     \[a > b := \exists x \in b: b \not \in a\]
 
-    Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$
+    Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$.
 
     \section{Der Körper der reellen Zahlen}
 
-    Ein Körper ist ein System aus einer Menge M, und zwei Operationen `+' und `*', die je zwei Elementen aus der Menge
+    Ein Körper K ist ein System aus einer Menge M, und zwei Operationen `+' und `*', die je zwei Elementen aus der Menge
     M einem der gleichen zuordnet.
 
     Für die Operationen `+' und `*' muss jeweils gelten (wobei $\emptyset$ ein eindeutiges neutrales Element für
@@ -193,18 +210,23 @@
 
     - $\forall x, y, z \in M: (x + y) * z = (x * z) + (y * z)$ (Distributiv)
 
-    All diese sollen im folgenden für unser $\mathbb{R}$ bewiesen werden.
+    % links/rechts-distributiv?
+
+    All diese sollen im folgenden für unser konstruiertes $\mathbb{R}$ bewiesen werden.
 
     \subsection{Addition dedekind'scher Schnitte}
 
     Wir definieren zunächst die Addition folgendermaßen:
 
-    $a + b \coloneqq \{x + y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\}$ [1]
+    $a + b \coloneqq \{x + y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\}$
 
     Wir müssen zunächst beweisen, dass $a + b$ tatsächlich ein dedekind'scher Schnitt ist.
 
-    Es ist klar, dass $a + b$ keine leere Menge ist, und eine Teilmenge der rationalen Zahlen, da wir deren Addition
-    hier verwenden.
+    $a + b$ ist nicht leer, da $a + b$ alle Kombinationen aus a und b enthält, und a und b nicht leer sind.
+
+    $a + b$ enthält nicht alle rationalen Zahlen, da die Zahl $infimum(a) + infimum(b) - 1$ nicht in $a + b$
+    enthalten sein kann, da dafür ein Element kleiner als das Infimum in a oder b enthalten sein müsste, was
+    aber nach der Definition unmöglich ist.
 
     Es ist ebenfalls klar, das $a + b$ keine Lücken hat.
     Sei m eine Zahl aus dem Schnitt $a + b$ und n eine Zahl die größer als m ist, aber nicht in $a + b$ enthalten ist.
@@ -214,17 +236,21 @@
 
     Sei $x + y$ das kleinstes Element in $a + b$. Sei weiterhin x' ein Element aus a.
     Sei $y' = x + y - x'$. Diese Zahl kann nicht $\in b$ sein, da sonst $x' + y' > x + y \Leftrightarrow y' > x + y - y'$.
-    Das steht im Widerspruch zur Annahmne, dass $x + y \in a + b$, da per Definition der Additon nur solche Elemente
-    in $a + b$ enthalten sind, für die $x \in a$ und $y \ in b$.
+    Das steht im Widerspruch zur Annahme, dass $x + y \in a + b$, da per Definition der Addition nur solche Elemente
+    in $a + b$ enthalten sind, für die $x \in a$ und $y \in b$.
 
     \subsubsection{Kommutativität und neutrales Element}
 
-    Die Kommutativität folgt aus der Kommutativität der rationalen Zahlen, bei austausch von a und b in [1].
+    Die Kommutativität folgt aus der Kommutativität der rationalen Zahlen:
+
+    \[a + b = \{x + y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\} =\]
+    \[= \{y + x \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\} =\]
+    \[= \{y + x \mspace{4mu} | \mspace{4mu} y \in b \land x \in a\} =\]
+    \[= b + a\]
 
     Das neutrale Element ist die Menge $\{a > 0 \mspace{4mu} | \mspace{4mu} a \in \mathbb{Q}\}$.
-    Bei Addition kommen nur Elemente kleiner-gleich der ursprünglichen Elemente heraus, und damit bleibt
+    Bei Addition kommen nur Elemente größer-gleich der ursprünglichen Elemente heraus, und damit bleibt
     der dedekidsch'sche Schnitt identisch.
-    (Da ein dedekidsch'scher Schnitt keine Lücken in den rationale Zahlen hat)
 
     \subsubsection{Assoziativität}
 
@@ -234,7 +260,11 @@
     Was wir umschrieben dürfen als:
     \[\{a+b+c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\}\]
 
-    Und auf selbe Weise in $(A + B) + B$ umformen dürfen.
+    Und weiterhin:
+
+    \[\{d+c \mspace{4mu} | \mspace{4mu} d \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\}\]
+
+    Was identisch zur gefordertem Eigenschaft $(A + B) + C$ ist.
 
     % Dies könnten wir hier noch ausführen, wenn wir noch was brauchen
 
@@ -242,12 +272,23 @@
 
     Wir schreiben das Inversum von A als $-A$ und definieren es als:
 
-    \[-A \coloneqq \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a + b > 0 \land a \in A\}\]
+    \[A^- \coloneqq \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a + b > 0 \land a \in A\}\]
 
-    % hier noch ein Beweis der Eigenschaften 1 - 30mm
+    Die Menge ist nicht-leer, da $a + b > 0$ in den rationalen Zahlen Lösungen besitzt, solange $|a| \not = \infty$ und
+    $|b| \not = \infty$.
 
+    Aus gleichem Grund ist die Menge nicht gleich den rationalen Zahlen, da es für obige Gleichung rationale Zahlen gibt,
+    die diese nicht erfüllen.
 
-    Weiterhin ist damit der Betrag eines dedekidsch'schen Schnittes definiert als:
+    Doch das Inversum kann ein kleinstes Element haben. In diesem Fall müssen wir dieses Element ausschließen,
+    und wir definieren also:
+
+    $-A := \begin{cases}A^- \mspace{6mu} wenn \mspace{6mu} A^- \mspace{6mu} kein \mspace{6mu} kleinstes \mspace{6mu} Element \mspace{6mu} hat \\A^- \symbol{'134} {x_0} \mspace{6mu} sonst\end{cases}$
+
+    Die Subtraktion ist wie üblich Definiert mit:
+    $A - B := A + (-B)$
+
+    Weiterhin ist damit der Betrag eines dedekindsch'schen Schnittes definiert als:
     \[|A| := \begin{cases}A \mspace{10mu} wenn \mspace{6mu} A \ge 0 \\ -A \mspace{10mu} sonst\end{cases}\]
 
     \subsection{Multiplikation dedekidsch'scher Schnitte}
@@ -256,9 +297,14 @@
 
     \[A \times B \coloneqq \{a * b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\]
 
-    % hier noch Beweis der Eigenschaften 1 - 3
+    Diese Menge ist wieder nicht-leer, da sie wieder die Kombinationen zweier nicht-leerer Mengen enthält.
 
-    Und für beliebige Schnitte A und B:
+    Sie ist nicht identisch zu den rationalen Zahlen, da sie nur positive Elemente enthalten kann.
+
+    Sie hat kein kleinstes Element.
+
+    Wir können nun diese Multiplikation auch auf negative Schnitte erweitern, dafür verwenden wir folgende
+    Fallunterscheidung:
     \[
         A * B \coloneqq
         \begin{cases}
@@ -269,9 +315,8 @@
         \end{cases}
     \]
 
-    Die Kommutativität für positive Schnitte ist wie bei der Addition klar ersichtlich, ebenso bei zwei negativen.
-    Für einen positiven und einen negativen brauchen wir nur uns das - vor dem Ergebnis wegdenken
-    (- ist eine eindeutige, symmetrische Operation).
+    Die Kommutativität für positive Schnitte ist wie bei der Addition klar ersichtlich.
+    Ein Vorzeichen ändert daran nichts, da dieses in der eigentlichen Berechung nicht verwendet wird.
 
     \subsubsection{Assoziativität}
 
@@ -290,8 +335,11 @@
 
     \[d = \{x * y * n \mspace{4mu} | \mspace{4mu} x \in a \land y \in b \land n \in c\}\]
 
-    Auf dem selben weg kommen wir zur geforderten Gleichung $d = a * (b * c)$, da die rationalen Zahlen
-    ebenfalls kommutativ sind.
+    Was sich umformen lässt zu:
+
+    \[d = \{x * m \mspace{4mu} | \mspace{4mu} x \in a \land m \in \{y * n \mspace{4mu} | \mspace{4mu} y \in b \land n \in c\}\}\]
+
+    Auf dem selben weg kommen wir zur geforderten Gleichung $d = a * (b * c)$.
 
     \subsubsection{Neutrales Element}
 
@@ -317,9 +365,13 @@
         \begin{cases}
             \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\} \mspace{4mu} wenn
             \mspace{4mu} diese \mspace{4mu} kein \mspace{4mu} kleinstes \mspace{4mu} Element \mspace{4mu} hat \\
-            \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\} / \{kleinstes Element\} \mspace{4mu} sonst
+            \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\} \symbol{'134} \{kleinstes Element\} \mspace{4mu} sonst
         \end{cases}
     \]
+
+    Und weiterhin definieren wir die Division mithilfe:
+
+    $a \div b := a * b^{-1}$
 
     \subsection{Distributivität}
 
@@ -370,7 +422,7 @@
     Sei
     \[I = \bigcup \limits_{a \in M} a \subseteq M\]
 
-    Da alle Elemente aus M dicht sind, und nach oben bis $\inf$ gehen, muss I ebenfalls dicht sein.
+    Da alle Elemente aus M dicht sind, und nach oben bis $\infty$ gehen, muss I ebenfalls dicht sein.
     I besitzt weiterhin kein kleinstes Element, da die kleinsten Elemente aus dem kleinsten Schnitt aus M kommen.
     I ist nach unten beschränkt, da alle Elemente aus M nach unten beschränkt sind.
 
@@ -403,9 +455,8 @@
     Es muss gelten: $f(s) \le m$.
     Aber auch $f(s+1) \ge m$ und ferner $f(s+2) > m$, da sonst $s+1$ auch Teil von N sein müsste.
 
-    Somit gibt es zu jeder reellen Zahlen m eine natürliche Zahl n (hier s + 1), die größer als m ist, und
-    damit ist $\mathbb{R}$ archimedisch.
-
+    Somit gibt es zu jeder reellen Zahlen m mindestens eine natürliche Zahl n (hier z.B. s + 1), die größer als m ist,
+    und  damit ist $\mathbb{R}$ archimedisch.
 
     \section{Ausblick}
 
@@ -416,7 +467,10 @@
     Doch der dedekind'sche Schnitt für -1, also $\{a \mspace{4mu} | \mspace{4mu} a^2 > -1\}$, ist gleich $\mathbb{Q}$,
     da dass Quadrat einer rationalen Zahl nie negativ sein kann.
     Wir können an dieser Stelle auch nicht einfach wieder `dedekind'sche Schnitte` über den reellen Zahlen bilden,
-    da die reellen Zahlen ebenfalls diese Eigenschaft besitzen.
+    da die reellen Zahlen ebenfalls die Eigenschaft besitzen, dass ihr Quadrat immer postitiv ist.
+
+    (An dieser Stelle sei angemekt, dass eine Konstruktion von dedekind'schen Schnitten über $\mathbb{R}$ gar
+    keine neuen Zahlen konstruiert)
 
     Wir wollen also eigentlich neue Zahlen konstruieren, für die Wurzeln auf beliebige Zahlen, nicht nur postitive,
     definiert sind.
