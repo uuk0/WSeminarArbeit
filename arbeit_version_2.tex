@@ -46,7 +46,7 @@
         \bigskip
         \bigskip
 
-        \textbf{Reelle Zahlen und ihre Arithmetik in der Darstellung der dedekind'schen Schnitten}
+        \textbf{Reelle Zahlen und ihre Arithmetik in der Darstellung der dedekind'schen Schnitte}
 
         \bigskip
         \bigskip
@@ -157,12 +157,12 @@
 
     \subsection{Eigenschaften der Mengenverschachtelungen:}
 
-    Sei A defniert durch $A = \{f(a) \mspace{4mu} | \mspace{4mu} a \in \{g(x) \mspace{4mu} | \mspace{4mu}  x \in I\}\}$.
+    Sei A definiert durch $A = \{f(a) \mspace{4mu} | \mspace{4mu} a \in \{g(x) \mspace{4mu} | \mspace{4mu}  x \in I\}\}$.
 
     Wir dürfen A umschreiben als:
     $A = \{f(g(x)) \mspace{4mu} | \mspace{4mu} x \in I\}$
 
-    Ebenfalls gilt die Umkehrung.
+    Ebenfalls gilt die Umkehrung und die Erweiterung auf Mehrvariablige Funktionen.
 
 
     \section{Ordnung der reellen Zahlen}
@@ -173,7 +173,7 @@
 
     Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$
 
-    \section{Der Körper der reelle Zahlen}
+    \section{Der Körper der reellen Zahlen}
 
     Ein Körper ist ein System aus einer Menge M, und zwei Operationen `+' und `*', die je zwei Elementen aus der Menge
     M einem der gleichen zuordnet.
@@ -384,6 +384,27 @@
 
     Damit ist $\mathbb{R}$ vollständig, da mit obigen Konstruktion allen reellen Zahlen ein Infimum, I, zugewiesen werden
     können.
+
+    \section{Der Archimedische Körper der reellen Zahlen}
+
+    Ein geordneter Zahlenkörper M ist dann archimedisch, wenn für all seine Elemente m eine natürliche Zahl n existiert,
+    die größer als m.
+    Dafür benötigt M eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}$,
+    welche einer natürlichen Zahl ein Element aus M zuordnet, um den Vergleich durchzuführen.
+
+    Für die reellen Zahlen ist eine solche Funktion die folgende:
+
+    \[f: n \rightarrow \{q \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q} \land q > n\}\]
+
+    Sei nun N die Menge aller natürlicher Zahlen kleiner als m sind, also
+    \[N = \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} f(n) \le m\}\]
+
+    Sei s nun das Supremum von N.
+    Es muss gelten: $f(s) \le m$.
+    Aber auch $f(s+1) \ge m$ und ferner $f(s+2) > m$, da sonst $s+1$ auch Teil von N sein müsste.
+
+    Somit gibt es zu jeder reellen Zahlen m eine natürliche Zahl n (hier s + 1), die größer als m ist, und
+    damit ist $\mathbb{R}$ archimedisch.
 
 
     \section{Ausblick}
