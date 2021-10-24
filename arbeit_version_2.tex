@@ -395,7 +395,39 @@
         = (A * C) + (B * C)
     \]
 
-    % Hier noch die anderen Fälle: C < 0, A < 0, A < 0 und B < 0, C < 0 und A < 0, alle < 0
+    Wenn C negativ wird, können wir $C \rightarrow -C$ substituieren, und erhalten:
+
+    \[
+        = (A + B) * (-1) * C = (-1) * ((A + B) * C) = (-1) * (AB + AC) =
+    \]
+
+    Wir nehmen nun $A' = AC$ und $B' = BC$ und erhalten mit Substitution der Invesionsformel:
+
+    \[
+        = \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} x + b > 0 \land x \in (A' + B')\} =
+    \]
+    \[
+        = \{b \in \mathbb(Q) \mspace{4mu} | \mspace{4mu} a' + b' + b > 0 \land a' \in A' \land b' \in B'\} =
+    \]
+    \[
+        = \{b_1 + b_2 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a' + b_1 > 0 \land b' + a_2 > 0 \land a' \in A' \land b' \in B'\} =
+    \]
+
+    Und nun nehmen wir $b_1$ und $b_2$ als Summanden:
+
+    \[
+        = \{b_1 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a' + b_1 > 0 \land a' \in A'\} + \{b_2 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} b' + b_2 > 0 \land b' \in B'\} =
+    \]
+    \[
+        = (-A') + (-B') = - AC - BC
+    \]
+
+    Und resubstituiert $C \rightarrow -C$ das gesuchte $AC + BC$
+
+    Wenn A oder B $< 0$ ist, wir nehmen an, es sei A, substituieren wir $A \rightarrow -A$ und erhalten $-AC+BC$,
+    und können wieder resubstituieren. Gleichermaßen wenn A und B negativ sind.
+
+    Damit ist unser Körper wirklich ein Körper.
 
     \section{Abgrenzung zu den rationalen Zahlen}
 
@@ -415,9 +447,9 @@
     der dedekind'schen Schnitte eine Teilmenge von $\mathbb{Q}$ ist.
     Also ist $\mathbb{Q}$ nicht vollständig.
 
-    \subsection{Die vollständigkeit der reellen Zahlen}
+    \subsection{Die Vollständigkeit der reellen Zahlen}
 
-    Sei M eine nicht-leere nach unten beschränkte Teilmenge von $\mathbb{R}$, und C eine untere Schranke von $\mathbb{R}$.
+    Sei M eine nicht-leere nach unten beschränkte Teilmenge von $\mathbb{R}$, und $C \in \mathbb{R}$ eine untere Schranke von M.
 
     Sei
     \[I = \bigcup \limits_{a \in M} a \subseteq M\]
@@ -476,10 +508,6 @@
     definiert sind.
 
     \newpage
-
-%     \appendix
-
-%     \newpage
 
     \section{Literaturverzeichnis}
 
