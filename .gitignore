@@ -1,8 +1,8 @@
 /auxil/
-/out/
-/arbeit_version_2.bbl
-/arbeit_version_2.blg
-/arbeit_version_2.aux
-/arbeit_version_2.toc
-/arbeit_version_2.log
-/arbeit_version_2.dvi
+*.aux
+*.log
+*.gz
+*.toc
+*.bbl
+*.blg
+*.dvi
