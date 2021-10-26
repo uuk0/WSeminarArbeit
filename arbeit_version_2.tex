@@ -395,13 +395,13 @@
         = (A * C) + (B * C)
     \]
 
-    Wenn C negativ wird, können wir $C \rightarrow -C$ substituieren, und erhalten:
+    Wenn C negativ ist, substituieren wir $C \rightarrow -C$ und erhalten:
 
     \[
         = (A + B) * (-1) * C = (-1) * ((A + B) * C) = (-1) * (AB + AC) =
     \]
 
-    Wir nehmen nun $A' = AC$ und $B' = BC$ und erhalten mit Substitution der Invesionsformel:
+    Wir setzten nun $A' = AC$ und $B' = BC$ und erhalten mit Substitution der Inversionsformel:
 
     \[
         = \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} x + b > 0 \land x \in (A' + B')\} =
@@ -413,19 +413,22 @@
         = \{b_1 + b_2 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a' + b_1 > 0 \land b' + a_2 > 0 \land a' \in A' \land b' \in B'\} =
     \]
 
-    Und nun nehmen wir $b_1$ und $b_2$ als Summanden:
+    Bei Aufspaltung durch die Rechenregeln dedekind'scher Schnitte:
 
     \[
         = \{b_1 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a' + b_1 > 0 \land a' \in A'\} + \{b_2 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} b' + b_2 > 0 \land b' \in B'\} =
     \]
+
+    Und Verwendung der Inversionsformel:
+
     \[
-        = (-A') + (-B') = - AC - BC
+        = (-A') + (-B') = A*(-C) + B * (-C)
     \]
 
-    Und resubstituiert $C \rightarrow -C$ das gesuchte $AC + BC$
+    Und resubstituiert $C \rightarrow -C$ die geforderte Formel $AC + BC$
 
-    Wenn A oder B $< 0$ ist, wir nehmen an, es sei A, substituieren wir $A \rightarrow -A$ und erhalten $-AC+BC$,
-    und können wieder resubstituieren. Gleichermaßen wenn A und B negativ sind.
+    Wenn A oder B $< 0$ ist, nehmen wur an, es sei A, substituieren wir $A \rightarrow -A$ und erhalten $(-A)C+BC$,
+    und können wieder re-substituieren zu $AC + BC$. Gleichermaßen wenn A und B negativ sind.
 
     Damit ist unser Körper wirklich ein Körper.
 
@@ -439,7 +442,8 @@
     keine rationale Zahl ist, sich aber beliebig annähern lässt, und somit zu jeder rationalen Zahl kleiner als
     $\sqrt{2}$ eine existiert, die näher an $\sqrt{2}$ ist.
 
-    Wir definieren darauf den Begriff der Vollständigkeit.
+    Wir definieren darauf den Begriff der Vollständigkeit:
+
     Eine geordnete Menge M ist genau dann Vollständig, wenn alle Teilmengen von M, die nach unten beschränkt sind,
     ein Infimum besitzen.
 
@@ -507,6 +511,11 @@
     Wir wollen also eigentlich neue Zahlen konstruieren, für die Wurzeln auf beliebige Zahlen, nicht nur postitive,
     definiert sind.
 
+    Desweiteren stellt sich nun das Problem, das durch den Unterschied zwischen $\mathbb{Q}$ und $\mathbb{R}$
+    durch die Vollständigkeit es möglich wird, das $\mathbb{R}$ `größer` als $\mathbb{Q}$ ist.
+
+    Dazu kennen wir das Konzept des `Betrages` einer Menge, aber wie vergleichen wir unendlich große Mengen?
+
     \newpage
 
     \section{Literaturverzeichnis}
@@ -518,7 +527,7 @@
     https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/Skript/
     Konstruktion\_reelle\_Zahlen.pdf, zuletzt abgerufen am 23.10.2021
 
-    - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf
+    - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf, zuletzt abgerufen am 26.10.2021
 
     \newpage
 
