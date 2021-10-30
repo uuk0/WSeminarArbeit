@@ -458,11 +458,24 @@
     Sei
     \[I = \bigcup \limits_{a \in M} a \subseteq M\]
 
-    Da alle Elemente aus M dicht sind, und nach oben bis $\infty$ gehen, muss I ebenfalls dicht sein.
-    I besitzt weiterhin kein kleinstes Element, da die kleinsten Elemente aus dem kleinsten Schnitt aus M kommen.
-    I ist nach unten beschränkt, da alle Elemente aus M nach unten beschränkt sind.
+    I ist eine Teilmenge von $\mathbb{Q}$:
+    Sei $n \in I$ eine Zahl $\not \in \mathbb{Q}$. Nach der Definition der Schnittmenge muss mindestens ein
+    $a \in M$ geben, für dass $n \in a$, was aber unmöglich ist, da a selbst eine Teilmenge von $\mathbb{Q}$ ist.
 
-    Also muss I wieder ein dedekind'scher Schnitt sein.
+    Da alle Elemente aus M dicht sind, muss I ebenfalls dicht sein.  % hier vielleicht noch ein kurzer beweis
+
+    I besitzt weiterhin kein kleinstes Element:
+
+    Sei i das kleinste Element aus I.
+    Nach der Definition der Vereinigungsmenge existiert midestens ein $a \in M$ für das $i \in a$.
+    i kann aber nicht das kleinste Element aus a sein, da a ein dedekind'scher Schnitt ist.
+    Damit muss es ein $j \in a$ geben, was kleiner als i ist. Das aber müsste auch in I enthalten sein,
+    was aber unmöglich ist, da i das kleinste Element aus I sein soll.
+
+    I ist nach unten beschränkt, da alle Elemente aus M nach unten beschränkt sind, und somit ein
+    $u \in \mathbb{Q}$ existieren muss, dass eine untere Schranke für alle $a \in M$ ist.
+
+    Also ist I wieder ein dedekind'scher Schnitt.
 
     Es gilt $I \le a$ für alle $a \in M$, da $\forall m \in M: m \subseteq I$. (Eigenschaften der Vereinigungsmenge)
 
@@ -475,14 +488,18 @@
 
     \section{Der Archimedische Körper der reellen Zahlen}
 
-    Ein geordneter Zahlenkörper M ist dann archimedisch, wenn für all seine Elemente m eine natürliche Zahl n existiert,
-    die größer als m.
-    Dafür benötigt M eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}$,
-    welche einer natürlichen Zahl ein Element aus M zuordnet, um den Vergleich durchzuführen.
+    Ein geordneter Körper M ist dann archimedisch, wenn für all seine Elemente m eine natürliche Zahl n existiert,
+    die größer als m ist.
+
+    Zunächst benötigt M eine Funktion $f: \mathbb{N} \rightarrow M$,
+    welche einer natürlichen Zahl ein Element aus M zuordnet.
+
+    Diese Funktion sollte die Elemente zurückgeben, sodass die Ordnung erhalten bleibt, also
+    $a, b \in \mathbb{R} \land a > b \Rightarrow f(a) > f(b)$
 
     Für die reellen Zahlen ist eine solche Funktion die folgende:
 
-    \[f: n \rightarrow \{q \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q} \land q > n\}\]
+    \[f: n \rightarrow \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q > n\}\]
 
     Sei nun N die Menge aller natürlicher Zahlen kleiner als m sind, also
     \[N = \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} f(n) \le m\}\]
