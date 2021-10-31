@@ -158,7 +158,9 @@
     wir deren dedekind'sche Schnitt betrachten.
 
     Das Infimum eines solchen Schnittes ist die rationale Zahl selbst, die diesen Schnitt beschreibt.
-    Wir werden später feststellen, das nicht alle dedekind'schen Schnitte ein rationales Infinum besitzen.
+    Wir werden später feststellen, das nicht alle dedekind'schen Schnitte ein rationales Infimum besitzen.
+
+    \newpage
 
     \section{Begriffsdefinitionen}
 
@@ -189,6 +191,8 @@
     \[a > b := \exists x \in b: b \not \in a\]
 
     Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$.
+
+    \newpage
 
     \section{Der Körper der reellen Zahlen}
 
@@ -375,8 +379,12 @@
 
     \subsection{Distributivität}
 
-    Wir betrachten den Term $(A + B) * C$.
-    Für den Fall, dass $A, B, C > 0$ sind, gilt:
+    Wir betrachten im folgenden den Term $(A + B) * C$.
+    Dafür unterscheiden wir verschieden Fälle der Vorzeicehn von A, B und C
+
+    \subsubsection{$A, B, C \ge 0$}
+
+    Wir dürfen nun umformen:
 
     \[
         (A + B) * C = \{x * c \mspace{4mu} | \mspace{4mu} x \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\} =
@@ -395,13 +403,15 @@
         = (A * C) + (B * C)
     \]
 
-    Wenn C negativ ist, substituieren wir $C \rightarrow -C$ und erhalten:
+    \subsubsection{$A, B \ge 0 \land C < 0$}
+
+    Wir substituieren $C = -C'$ und erhalten:
 
     \[
-        = (A + B) * (-1) * C = (-1) * ((A + B) * C) = (-1) * (AB + AC) =
+        = (A + B) * (-1) * C' = (-1) * ((A +< B) * C') = (-1) * (AB + AC') =
     \]
 
-    Wir setzten nun $A' = AC$ und $B' = BC$ und erhalten mit Substitution der Inversionsformel:
+    Wir setzten nun $A' = AC'$ und $B' = BC'$ und erhalten mit Substitution der Inversionsformel:
 
     \[
         = \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} x + b > 0 \land x \in (A' + B')\} =
@@ -422,18 +432,25 @@
     Und Verwendung der Inversionsformel:
 
     \[
-        = (-A') + (-B') = A*(-C) + B * (-C)
+        = (-A') + (-B') = A*(-C') + B * (-C')
     \]
 
-    Und resubstituiert $C \rightarrow -C$ die geforderte Formel $AC + BC$
+    Und resubstituiert $-C' = C$ die geforderte Formel $AC + BC$
 
-    Wenn A oder B negativ ist:
+    \subsubsection{$A < 0, B \land c \ge 0$}
 
-    Zunächst können wir aufgrund der Kommutativität von A + B annehmen, dass A < 0 ist.
+    Zunächst können wir aufgrund der Kommutativität von A + B annehmen, dass $A < 0$ ist.
+    Für den Fall, dass es B ist, können wir aufgrund der Kommutativität der Addition im folgenden A mit B tauschen.
 
+    Wir substituieren $A = -A'$ und erhalten:
 
+    \[
+        (-A + B) * C = \{\}
+    \]
 
     Damit ist unser Körper wirklich ein Körper.
+
+    \newpage
 
     \section{Abgrenzung zu den rationalen Zahlen}
 
