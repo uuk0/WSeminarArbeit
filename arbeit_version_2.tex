@@ -91,7 +91,7 @@
     die Umkehrung der Multiplikation, die Division, nicht für alle Paare ganzer Zahlen definiert ist.
     So ist $\frac{1}{2}$ keine ganze Zahl.
 
-    Daraufhin haben wir die rationalen Zahlen eingeführt, welche ebendiese Lücke gefüllt haben.
+    Daraufhin haben wir die rationalen Zahlen $\mathbb{Q}$ eingeführt, welche ebendiese Lücke gefüllt haben.
 
     Doch auch die rationalen Zahlen sind auch nicht vollständig.
     Die Gleichung $a^2 = a * a = 2$ hat keine Lösung in den rationalen Zahlen.
@@ -114,9 +114,9 @@
 
     Wir können aber klar definieren, welche rationalen Zahlen kleiner bzw. größer als $\sqrt{2}$ sind:
 
-    \[\{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n < 0 \lor n^2 < 2\}\]
+    \[\{n \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} n < 0 \lor n^2 < 2\}\]
 
-    \[\{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} n > 0 \land n^2 > 2\}\]
+    \[\{n \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} n > 0 \land n^2 > 2\}\]
 
     An dieser Stelle müssen wir die Bedingung $n > 0$ bzw. $n < 0$ einfügen, da $n ^ 2 = 2$ zwei Lösungen besitzt,
     an dieser Stelle aber nur die Positive gesucht ist.
@@ -128,7 +128,7 @@
 
     \section{Formale Defintion Dedekind'scher Schnitte}
 
-    1. Ein Dedekind'scher Schnitt r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Z}$,
+    1. Ein Dedekind'scher Schnitt r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Q}$,
     also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten beschränkt ist,
     (Vgl. Begriffsdefinition im nachfolgendem Teil) und nicht gleich den rationalen Zahlen selbst ist.
 
@@ -427,8 +427,11 @@
 
     Und resubstituiert $C \rightarrow -C$ die geforderte Formel $AC + BC$
 
-    Wenn A oder B $< 0$ ist, nehmen wur an, es sei A, substituieren wir $A \rightarrow -A$ und erhalten $(-A)C+BC$,
-    und können wieder re-substituieren zu $AC + BC$. Gleichermaßen wenn A und B negativ sind.
+    Wenn A oder B negativ ist:
+
+    Zunächst können wir aufgrund der Kommutativität von A + B annehmen, dass A < 0 ist.
+
+
 
     Damit ist unser Körper wirklich ein Körper.
 
