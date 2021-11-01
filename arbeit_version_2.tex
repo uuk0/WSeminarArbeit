@@ -188,7 +188,7 @@
 
     Seien a und b zwei dedekind'sche Schnitte. Wir definieren
 
-    \[a > b := \exists x \in b: b \not \in a\]
+    \[A > B := A \subset B \Leftrightarrow \exists b \in B \mspace{4mu} | \mspace{4mu} b \not \in A\]
 
     Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$.
 
@@ -307,8 +307,8 @@
 
     Sie hat kein kleinstes Element.
 
-    Wir können nun diese Multiplikation auch auf negative Schnitte erweitern, dafür verwenden wir folgende
-    Fallunterscheidung:
+    Wir können nun die Multiplikation wiefolgendend mithilfe obiger $\times$-Operation definieren,
+    dafür verwenden wir folgende Fallunterscheidung:
     \[
         A * B \coloneqq
         \begin{cases}
@@ -325,7 +325,7 @@
     \subsubsection{Assoziativität}
 
     Seien a, b und c drei dedekind'sche Schnitte, und d = (a * b) * c.
-    Der einfachheit halber seien a, b und c zunächst positiv.
+    Der Einfachheit halber seien a, b und c zunächst positiv.
 
     Wir können d schreiben als:
 
@@ -345,6 +345,8 @@
 
     Auf dem selben weg kommen wir zur geforderten Gleichung $d = a * (b * c)$.
 
+    % Was ist, wenn eines der Elemente negativ ist?
+
     \subsubsection{Neutrales Element}
 
     Das neutrale Element der Multiplikation ist die `1`, also $\{q > 1 \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q}\}$
@@ -356,9 +358,9 @@
     \subsubsection{Inverse Element und die Division}
 
     Wir definieren:
-    \[a* := \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\}\]
+    \[a^* := \{y \mspace{4mu} | \mspace{4mu} x * y > 1 \land x \in a \land y \in \mathbb{Q}\}\]
 
-    a* ist nicht-leer und enthält nicht alle Elemente der rationalen Zahlen.
+    $a^*$ ist nicht-leer und enthält nicht alle Elemente der rationalen Zahlen.
 
     Aber wir stellen fest, dass diese Menge ein kleinstes Element haben kann.
 
@@ -429,7 +431,7 @@
         = \{b_1 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a' + b_1 > 0 \land a' \in A'\} + \{b_2 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} b' + b_2 > 0 \land b' \in B'\} =
     \]
 
-    Und Verwendung der Inversionsformel:
+    Und Verwendung der Inversions-formel:
 
     \[
         = (-A') + (-B') = A*(-C') + B * (-C')
@@ -437,15 +439,56 @@
 
     Und resubstituiert $-C' = C$ die geforderte Formel $AC + BC$
 
-    \subsubsection{$A < 0, B \land c \ge 0$}
+    \subsubsection{$A < 0, B \land C \ge 0 \land A + B \ge 0$}
 
-    Zunächst können wir aufgrund der Kommutativität von A + B annehmen, dass $A < 0$ ist.
-    Für den Fall, dass es B ist, können wir aufgrund der Kommutativität der Addition im folgenden A mit B tauschen.
+    Folgendes gilt auch, wenn A und B getauscht werden (Kommutativität der Addition).
+
+    Aufgrund der Bedingung $|A| < |B|$ muss $(-A + B) > 0$ sein.
 
     Wir substituieren $A = -A'$ und erhalten:
 
     \[
-        (-A + B) * C = \{\}
+        (-A' + B) * C = \{c * x \mspace{4mu} | \mspace{4mu} c \in C \land x \in \{a + b \mspace{4mu} | \mspace{4mu} a \in -A' \land b \in B\}\} =
+    \]
+    \[
+        = \{c * (a + b) \mspace{4mu} | \mspace{4mu} c \in C \land a \in -A' \land b \in B\} =
+    \]
+    \[
+        = \{a*c + b*c \mspace{4mu} | \mspace{4mu} c \in C \land a \in -A' \land b \in B\} =
+    \]
+    \[
+        = \{a*c \mspace{4mu} | \mspace{4mu} a \in -A' \land c \in C\} + \{b * c \mspace{4mu} | \mspace{4mu} b \in B \land c \in C\} =
+    \]
+    \[
+        = -A' * C + B * C
+    \]
+    Und mit Resubstituiert $A' = -A$: $A * C + B * C$
+
+    \subsubsection{$A < 0 \land B, C \ge 0 \land A + B < 0$}
+
+    \[
+        (A + B) * C = -\{x * c \mspace{4mu} | \mspace{4mu} x \in -(A + B) \land c \in C\} =
+    \]
+    \[
+        = -\{(-a + -b) * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} =
+    \]
+
+    Der innere Teil stellt $((-A)+(-B))*C$ dar. $(-A)+(-B)$ ist aber $> 0$, also dürfen wir es umschreiben als:
+    $-AC + (-BC)$.
+
+    Das `-` können wir nun auf beide Terme Aufteilen, und erhalten das gesuchte $AC + BC$
+
+    \subsubsection{$A, B < 0 \land C \ge 0$}
+
+    Wir substituieren $A = -A'$ und $B = -B'$:
+
+    \[
+        ((-A') + (-B')) * C
+    \]
+
+    Unter Verwendung der Umkehrung der Distributivität mit $A, B > 0$ und $C < 0$ ergibt sich daraus:
+    \[
+        ((A' + B') * (-1)) * C = (A' + B') * (-C) = -A'C + (-B'C) = AC + BC
     \]
 
     Damit ist unser Körper wirklich ein Körper.
