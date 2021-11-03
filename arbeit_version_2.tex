@@ -97,18 +97,22 @@
     Die Gleichung $a^2 = a * a = 2$ hat keine Lösung in den rationalen Zahlen.
     
     Beweis:
-    Gibt es eine rationale Zahl q mit $q = \frac{m}{n}$, sodass $q = \sqrt{2}$, so muss gelten:
-    \begin{equation}
+    Gibt es eine rationale Zahl q mit $q = \frac{m}{n}$, sodass $q = \sqrt{2}$, so müsste gelten:
+    \[
         q = \sqrt{2} \Leftrightarrow \frac{m}{n} = \sqrt{2} \Leftrightarrow \frac{m^2}{n^2} = 2 \Leftrightarrow m^2 = 2n^2
-    \end{equation}
+    \]
 
     Also muss entweder $m^2$ oder $n^2$ ungerade viele 2-er in der
     Primzahlenzerlegung enthalten, was aber unmöglich ist, da Quadratzahlen Primfaktoren immer gerade oft enthalten.
     
     Damit kann es keine rationale Zahl q geben, die die obige Gleichung erfüllt.
 
-    Weiterhin gilt dies für alle rationalen Zahlen, welche sich nicht als Quotient zweier Quadratzahlen darstellen
-    lassen.
+    Weiterhin gibt es in den rationalen Zahlen q für die Gleichung $x^2 = q$ nur für die q Lösungen,
+    die der Form $q = x'^2$ mit $x' \in \mathbb{Q}$ sind.
+    \footnote{
+        An dieser Stelle ist für beide kein solcher Beweis angefügt, aber der Beweis für $\sqrt{2}$ lässt
+        sich auf beliebige q erweitern.
+    }
 
     \section{Näherung von $\sqrt{2}$}
 
@@ -126,7 +130,7 @@
 
     Wir wollen im folgendem die `obere` Menge als Dedekind'scher Schnitt bezeichnen.
 
-    \section{Formale Defintion Dedekind'scher Schnitte}
+    \section{Formale Definition Dedekind'scher Schnitte}
 
     1. Ein Dedekind'scher Schnitt r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Q}$,
     also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten beschränkt ist,
@@ -143,24 +147,11 @@
     Elemente der Potenzmenge der rationalen Zahlen, für die obige drei Eingenschaften gelten.
 
     Anmerkung:
+
     Je nach Literatur wird ein dedekidsch'scher Schnitt auch als eine nach oben Beschränkte Teilmenge beschrieben,
-    welche kein größtes Element besitzt.
-
-    \subsection{Übergang von den rationalen Zahlen zu den reellen Zahlen}
-
-    Wir müssen eine Funktion definieren, die jeder rationalen Zahlen q einen dedekind'schen Schnitt r zuordnet.
-
-    Eine solche Funktion ist:
-
-    \[r = \{x > q \mspace{4mu} | \mspace{4mu} x \in \mathbb{Q}\}\]
-
-    Im folgenden werden wir sehen, dass diese Definition die Eigenschaften der rationalen Zahlen erhält, wenn
-    wir deren dedekind'sche Schnitt betrachten.
-
-    Das Infimum eines solchen Schnittes ist die rationale Zahl selbst, die diesen Schnitt beschreibt.
-    Wir werden später feststellen, das nicht alle dedekind'schen Schnitte ein rationales Infimum besitzen.
-
-    \newpage
+    welche kein größtes Element besitzt, oder auch als geordnetes Paar beider.
+    welche kein größtes Element besitzt, oder auch als geordnetes Paar beider. Der einfachhalthalber
+    verwende ich im folgenden nur die obige Definition
 
     \section{Begriffsdefinitionen}
 
@@ -175,22 +166,50 @@
 
     Weiterhin ist das Supremum die kleinste obere Schranke, und das Infimum die größte untere Schranke einer Menge m.
 
-    \subsection{Eigenschaften von Mengendefinitionsverschachtelungen}
+    \newpage
 
-    Sei A definiert durch $A = \{f(a) \mspace{4mu} | \mspace{4mu} a \in \{g(x) \mspace{4mu} | \mspace{4mu}  x \in I\}\}$.
+    \subsection{Übergang von den rationalen zu den reellen Zahlen}
 
-    Wir dürfen A umschreiben als:
-    $A = \{f(g(x)) \mspace{4mu} | \mspace{4mu} x \in I\}$
+    Wir müssen eine Funktion definieren, die jeder rationalen Zahlen q einen dedekind'schen Schnitt r zuordnet.
 
-    Ebenfalls gilt die Umkehrung und die Erweiterung auf mehr-variabligen Funktionen.
+    Eine solche Funktion ist:
+
+    \[r = \{x > q \mspace{4mu} | \mspace{4mu} x \in \mathbb{Q}\}\]
+
+    Im folgenden werden wir sehen, dass diese Definition die Eigenschaften der rationalen Zahlen erhält, wenn
+    wir deren dedekind'sche Schnitt betrachten.
+
+    Das Infimum eines solchen Schnittes ist die rationale Zahl selbst, die diesen Schnitt beschreibt.
+    Wir werden später feststellen, das nicht alle dedekind'schen Schnitte ein rationales Infimum besitzen.
 
     \section{Ordnung in den reellen Zahlen}
 
     Seien a und b zwei dedekind'sche Schnitte. Wir definieren
 
-    \[A > B := A \subset B \Leftrightarrow \exists b \in B \mspace{4mu} | \mspace{4mu} b \not \in A\]
+    \[A > B := A \subset B\]
 
     Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$.
+
+    Diese Gleichung sollte idealerweise auch für zwei Schnitte aus rationalen Zahlen gelten:
+
+    Sei $a, b \in \mathbb{Q}$ mit $a > b$, und $A$ und $B$ die beiden dedekind'schen Schnitte von a und b.
+
+    Wir schreiben:
+    \[
+        A > B \Leftrightarrow \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q > a\} \subset
+        \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q > b\}
+    \]
+    \[
+        \Leftrightarrow (\forall x \in A: x \in B) \land (\exists y \in B: y \not \in A)
+    \]
+
+    Für den ersten Teil nehmen wir an, $x'$ sei $\in A$, aber nicht $\in B$.
+    Dafür müsste $x' > a$, aber $\le b$ sein, was aber unmöglich ist, da $a > b$.
+
+    Für den anderen Teil nehmen wir $y = a$ und erhalten, dass a nicht in A enthalten ist, aber in B enthalten sein
+    muss.
+
+    Damit ist die Ordnung zweier Schnitte zweier ratioanler Zahlen erhalten.
 
     \newpage
 
@@ -210,7 +229,7 @@
 
     - $\forall x \in M: \exists y \in M: x \bigoplus y = \emptyset$  (Existenz einer Inversen)
 
-    Und Operationsübergreifend:
+    Und Operations-übergreifend:
 
     - $\forall x, y, z \in M: (x + y) * z = (x * z) + (y * z)$ (Distributiv)
 
@@ -223,6 +242,9 @@
     Wir definieren zunächst die Addition folgendermaßen:
 
     $a + b \coloneqq \{x + y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\}$
+    \footnote{
+        Vgl. Richard Dedekind, Stetigkeit und Irrationale Zahlen, S. 17ff
+    }
 
     Wir müssen zunächst beweisen, dass $a + b$ tatsächlich ein dedekind'scher Schnitt ist.
 
@@ -382,11 +404,11 @@
     \subsection{Distributivität}
 
     Wir betrachten im folgenden den Term $(A + B) * C$.
-    Dafür unterscheiden wir verschieden Fälle der Vorzeicehn von A, B und C
+    Dafür unterscheiden wir verschieden Fälle der Vorzeichen von A, B und C.
 
     \subsubsection{$A, B, C \ge 0$}
 
-    Wir dürfen nun umformen:
+    Wir setzen unsere Definitionen ein und erhalten:
 
     \[
         (A + B) * C = \{x * c \mspace{4mu} | \mspace{4mu} x \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\} =
@@ -394,6 +416,11 @@
     \[
         = \{(a + b) * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} =
     \]
+    \footnote{
+        Diese Umformung nimmt an, dass $\{f(x) \mspace{4mu} | \mspace{4mu} x \in \{g(x) \mspace{4mu} | \mspace{4mu} x \in A\}\} =
+        \{f(g(x) \mspace{4mu} | \mspace{4mu} x \in A)\}$ ist,
+        was ich an dieser Stelle nicht beweise.
+    }
     \[
         = \{a * c + b * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} =
     \]
@@ -597,6 +624,8 @@
     Somit gibt es zu jeder reellen Zahlen m mindestens eine natürliche Zahl n (hier z.B. s + 1), die größer als m ist,
     und  damit ist $\mathbb{R}$ archimedisch.
 
+    \newpage
+
     \section{Ausblick}
 
     In der Einleitung haben wir $\sqrt{2}$ betrachtet, und gemerkt, dass sie keine rationale Zahl ist.
@@ -623,19 +652,21 @@
 
     \section{Literaturverzeichnis}
 
-    - Uwe Storch, Hartmut Wiebe: Grundkonzepte der Mathematik: Mengentheoretische, algebraische, topologische Grundlagen
-    sowie reelle und komplexe Zahlen, Springer Spektrum Verlag
+    - Uwe Storch, Hartmut Wiebe: "Grundkonzepte der Mathematik: Mengentheoretische, algebraische, topologische Grundlagen
+    sowie reelle und komplexe Zahlen", Springer Spektrum Verlag, 2017
 
-    - Prof. Dr. Siegfried Echterhoff: Ergänzung zur Vorlesung Analysis I WS08/0, Konstruktion von $\mathbb{R}$,
-    https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/Skript/
-    Konstruktion\_reelle\_Zahlen.pdf, zuletzt abgerufen am 23.10.2021
+    - Prof. Dr. Siegfried Echterhoff: "Ergänzung zur Vorlesung Analysis I WS08/0, Konstruktion von $\mathbb{R}$",
+    https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/ $\mspace{8mu}$ Skript/Konstruktion\_reelle\_Zahlen.pdf,
+    zuletzt abgerufen am 23.10.2021
 
     - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf, zuletzt abgerufen am 26.10.2021
 
     - Courant, R. and Robbins, H. "Alternative Methods of Defining Irrational Numbers. Dedekind Cuts.", 2. Auflage,
     S. 71f
 
-    - Dedekind Cuts. Brilliant.org. Abgerufen am 3.11.2021, 9:30, https://brilliant.org/wiki/dedekind-cuts/
+    - Dedekind Cuts. Brilliant.org. Abgerufen am 3.11.2021, 9:30, https://brilliant.org/ wiki/dedekind-cuts/
+
+    - Richard Dedekind, Stetigkeit und Irrationale Zahlen, Vieweg+Teubner Verlag, 1960
 
     \newpage
 
