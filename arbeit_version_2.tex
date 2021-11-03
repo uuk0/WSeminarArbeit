@@ -439,7 +439,7 @@
 
     Und resubstituiert $-C' = C$ die geforderte Formel $AC + BC$
 
-    \subsubsection{$A < 0, B \land C \ge 0 \land A + B \ge 0$}
+    \subsubsection{$A < 0 \land B, C \ge 0 \land A + B \ge 0$}
 
     Folgendes gilt auch, wenn A und B getauscht werden (Kommutativität der Addition).
 
@@ -464,6 +464,17 @@
     \]
     Und mit Resubstituiert $A' = -A$: $A * C + B * C$
 
+    \subsubsection{$A, C < 0 \land B \ge 0 \land A + B \ge 0$}
+
+    Wir substituieren $A = -A'$ und $C = -C'$:
+
+    \[
+        (-A' + B) * (-C') = -1 * ((-A' + B) * C') = -1 * (AC' + BC') =
+    \]
+    \[
+        = -AC' + (-BC') = AC + BC
+    \]
+
     \subsubsection{$A < 0 \land B, C \ge 0 \land A + B < 0$}
 
     \[
@@ -478,6 +489,12 @@
 
     Das `-` können wir nun auf beide Terme Aufteilen, und erhalten das gesuchte $AC + BC$
 
+    \subsubsection{$A, C < 0 \land B \ge 0 \land A + B < 0$}
+
+    \[
+        (A + B) * (-C') = -((A + B) * C') = -(AC' + BC') = AC + BC
+    \]
+
     \subsubsection{$A, B < 0 \land C \ge 0$}
 
     Wir substituieren $A = -A'$ und $B = -B'$:
@@ -489,6 +506,12 @@
     Unter Verwendung der Umkehrung der Distributivität mit $A, B > 0$ und $C < 0$ ergibt sich daraus:
     \[
         ((A' + B') * (-1)) * C = (A' + B') * (-C) = -A'C + (-B'C) = AC + BC
+    \]
+
+    \subsubsection{$A, B, C < 0$}
+
+    \[
+        = (A + B) * (-C') = -((A + B) * C') = -(AC' + BC') = AC + BC
     \]
 
     Damit ist unser Körper wirklich ein Körper.
@@ -608,6 +631,11 @@
     Konstruktion\_reelle\_Zahlen.pdf, zuletzt abgerufen am 23.10.2021
 
     - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf, zuletzt abgerufen am 26.10.2021
+
+    - Courant, R. and Robbins, H. "Alternative Methods of Defining Irrational Numbers. Dedekind Cuts.", 2. Auflage,
+    S. 71f
+
+    - Dedekind Cuts. Brilliant.org. Abgerufen am 3.11.2021, 9:30, https://brilliant.org/wiki/dedekind-cuts/
 
     \newpage
 
