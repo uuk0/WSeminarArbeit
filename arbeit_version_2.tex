@@ -14,6 +14,8 @@
 \usepackage[a4paper, left=3.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
 \usepackage{mathtools}
 
+\usepackage{amssymb}
+
 
 % Setup spacing
 \onehalfspacing
@@ -215,11 +217,13 @@
 
     \section{Der Körper der reellen Zahlen}
 
-    Ein Körper K ist ein System aus einer Menge M, und zwei Operationen `+' und `*', die je zwei Elementen aus der Menge
-    M einem der gleichen zuordnet.
+    Ein Körper K ist ein System aus einer Menge M, und zwei Funktionen `+': $\mathbb{R}^2 \rightarrow \mathbb{R}$
+    und `*': $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 
-    Für die Operationen `+' und `*' muss jeweils gelten (wobei $\emptyset$ ein eindeutiges neutrales Element für
-    die Operation darstellt):
+    Wir schreiben für $+(a, b)$ auch $a + b$ und analog für $*(a, b)$ auch $a * b$.
+
+    Für die Operationen `+' und `*' muss jeweils gelten, dabei ist $\emptyset$ ein Operationsspezifisches
+    neutrales Element:
 
     - $\forall x, y, t \in M: x \bigoplus (y \bigoplus z) = (x \bigoplus y) \bigoplus z$  (Assoziativ)
 
@@ -229,11 +233,9 @@
 
     - $\forall x \in M: \exists y \in M: x \bigoplus y = \emptyset$  (Existenz einer Inversen)
 
-    Und Operations-übergreifend:
+    Und Operationsübergreifend:
 
     - $\forall x, y, z \in M: (x + y) * z = (x * z) + (y * z)$ (Distributiv)
-
-    % links/rechts-distributiv?
 
     All diese sollen im folgenden für unser konstruiertes $\mathbb{R}$ bewiesen werden.
 
@@ -287,10 +289,8 @@
     \[\{a+b+c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\}\]
 
     Und weiterhin:
-
     \[\{d+c \mspace{4mu} | \mspace{4mu} d \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\}\]
-
-    Was identisch zur gefordertem Eigenschaft $(A + B) + C$ ist.
+    \[= \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} + C = (A + B) + C\]
 
     % Dies könnten wir hier noch ausführen, wenn wir noch was brauchen
 
@@ -413,14 +413,12 @@
     \[
         (A + B) * C = \{x * c \mspace{4mu} | \mspace{4mu} x \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\} =
     \]
-    \[
-        = \{(a + b) * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} =
-    \]
-    \footnote{
+    \begin{center}
+        $ = \{(a + b) * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} = $\footnote{
         Diese Umformung nimmt an, dass $\{f(x) \mspace{4mu} | \mspace{4mu} x \in \{g(x) \mspace{4mu} | \mspace{4mu} x \in A\}\} =
-        \{f(g(x) \mspace{4mu} | \mspace{4mu} x \in A)\}$ ist,
+        \{f(g(x)) \mspace{4mu} | \mspace{4mu} x \in A)\}$ ist,
         was ich an dieser Stelle nicht beweise.
-    }
+    }\end{center}
     \[
         = \{a * c + b * c \mspace{4mu} | \mspace{4mu} a \in A \land b \in B \land c \in C\} =
     \]
@@ -558,10 +556,9 @@
     Wir definieren darauf den Begriff der Vollständigkeit:
 
     Eine geordnete Menge M ist genau dann Vollständig, wenn alle Teilmengen von M, die nach unten beschränkt sind,
-    ein Infimum besitzen.
+    ein Infimum in M besitzen.
 
-    Für die Menge $\mathbb{Q}$ ist der Schnitt $\sqrt{2}$ ein Gegenbeispiel, der nach Definition
-    der dedekind'schen Schnitte eine Teilmenge von $\mathbb{Q}$ ist.
+    Für die Menge $\mathbb{Q}$ ist der Schnitt $\sqrt{2}$, der eine Teilmenge von $\mathbb{Q}$ ist, ein Gegenbeispiel.
     Also ist $\mathbb{Q}$ nicht vollständig.
 
     \subsection{Die Vollständigkeit der reellen Zahlen}
@@ -601,7 +598,7 @@
 
     \section{Der Archimedische Körper der reellen Zahlen}
 
-    Ein geordneter Körper M ist dann archimedisch, wenn für all seine Elemente m eine natürliche Zahl n existiert,
+    Ein geordneter Körper M ist dann archimedisch, wenn für alle seiner Elemente m eine natürliche Zahl n existiert,
     die größer als m ist.
 
     Zunächst benötigt M eine Funktion $f: \mathbb{N} \rightarrow M$,

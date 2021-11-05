@@ -9,12 +9,13 @@
 \usepackage{setspace}
 \usepackage{parskip}
 \usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{amssymb}
 \usepackage[ngerman]{babel}
 
 \usepackage[a4paper, left=3.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
 
 \onehalfspacing
-
 % Document
 \begin{document}
 
@@ -85,15 +86,462 @@
 
     % Hier die Arbeit
 
-    \section{Einleitung}
+    \section*{I. Mächtigkeit von Mengen}
 
-    \section{Satz von Cantor}
+		\subsection*{1. Arten von Abbildungen}
+		
+		\subsubsection*{a) Injektive Abbildungen}
+		
+		Eine Abbildung f: $A \rightarrow B$ heißt \underline{injektiv}, wenn es zu jedem Element b aus B 
+		(Zielmenge) \underline{höchstens ein} Element a aus A (Definitionsmenge) gibt.
+		
+		Man schreibt dann: {\color{blue}f: $A \xrightarrow{\text{1-1}} B$} und sagt: {\color{blue}f ist 
+		eine Injektion von A nach B}
+		
+		\underline{Beispiel im Mengendiagramm:}		
+		
+		% Mengediagramm!!!
+		
+		Für die Elemente $b_1$, $b_2$, $b_3$ gibt es \underline{genau} jeweils ein $a_1$, $a_2$, $a_3$
+		aus A, für $b_4$ aus B gibt es aber \underline{kein} $a_4$ aus A ($a_4 \not \in A$).
+		
+		Zu jedem Element b aus B gibt es somit \underline{höchstens} ein Element a aus A. 
+		Damit ist die Abbildung $f: A \rightarrow B$ in unserem Beispiel injektiv.
+		
+		\underline{Beispiele aus der Analysis:}
+		
+		f: $\mathbb{R} \rightarrow \mathbb{R}$ \hspace*{2mm} $x \mapsto x^2$ $\Rightarrow$ Diese Abbildung ist nicht injektiv
+		
+		g: $\mathbb{R}_0^+ \rightarrow \mathbb{R}$ \hspace*{2mm} $x \mapsto x^2$ $\Rightarrow$ Diese Abbildung ist injektiv
+		
+		h: $\mathbb{R} \rightarrow \mathbb{R}_0^-$ \hspace*{2mm} $x \mapsto x^2$ $\Rightarrow$ Diese Abbildung ist injektiv
+		
+		i: $\mathbb{C} \rightarrow \mathbb{R}_0^-$ \hspace*{2mm} $x \mapsto x^2$ $\Rightarrow$ Diese Abbildung ist injektiv
+		
+		\subsubsection*{b) Surjektive Abbildungen}
+		
+		Eine Abbildung f: $A \rightarrow B$ heißt \underline{surjektiv}, wenn es zu jedem Element b aus B
+		\underline{mindestens ein} Element a aus A mit $f(a) = b$ gibt.
+		
+		Man schreibt dann: {\color{blue}f: $A \xrightarrow[\text{auf}]{} B$} und sagt: {\color{blue}f ist 
+		eine Surjektion von A nach B}
+		
+		\underline{Formale Definition:} $(\forall b \in B) (\exists a \in A) (b = f(a))$
+		
+		Bei surjektiven Abbildungen gilt: $im_f = cod_f \Leftrightarrow B = im_f$.
+		
+		\underline{Beispiele im Mengendiagramm:}
+		
+		% Abbildung!!!!
+		
+		Diese Abbildung f: $A \leftarrow B$ ist surjektiv, da für jedes Element b aus B \underline{mindestens}
+		ein Element a aus A existiert.
 
-    Sei M eine Menge und $\mathcal{P}(M)$ ihre Potenzmenge.
-
-    Der Satz von Cantor besagt nun, dass $|M| < |\mathcal{P}(M)|$
-
-    \subsection{Beweis}
+		\underline{Gegenbeispiel:}
+		
+		% Diagramm!!!!!!!
+		
+		Diese Abbildung ist weder \underline{injektiv} noch \underline{surjektiv}.
+		
+		\underline{Beispiele aus der Analysis:}
+		
+		f: $\mathbb{R} \rightarrow \mathbb{R}$ \hspace*{2mm} $x \mapsto x^2$ $\Rightarrow$ Die Abbildung ist nicht surjektiv
+		
+		g: $\mathbb{R} \rightarrow \mathbb{R}_0^+$ \hspace*{2mm} $x \mapsto x^2$ $\Rightarrow$ Die Abbildung ist surjektiv
+		
+		\subsubsection*{c) Bijektive Abbildungen}
+		
+		Existiert zu jedem b aus B \underline{genau ein} Element a aus A, so ist die Abbildung f: $A \rightarrow B$ sowohl
+		\underline{injektiv} als auch \underline{surjektiv}. Man sagt dann: {\color{blue}f ist \underline{bijektiv}}
+		
+		Man schreibt dann: {\color{blue}f: $A \xrightarrow[\text{auf}]{1-1} B$} und spricht: {\color{blue}f ist eine Bijektion von A nach B}
+		
+		Bijektivität ist der Schnitt der Eigenschaften aus Injektivität und Surjektivität.
+		
+		\underline{Beispiel im Mengendiagramm:}
+		
+		% Diagramm!!!!!
+		
+		\underline{Beispiel aus der Analysis:} \hspace*{3mm} f: $\mathbb{R} \rightarrow \mathbb{R}$ \hspace*{2mm} $x \mapsto x^3$
+		
+		\underline{Fazit:} Ist eine Abbildung f: $A \rightarrow B$ bijektiv, so enthalten die Mengen A und B jeweils dieselbe Anzahl 
+		an Elementen.
+		
+		\subsection*{2. Mächtigkeit von Mengen}
+		\subsubsection*{a) Gleichmächtige Mengen}
+		
+		\fbox{\parbox{\linewidth}{
+		\underline{Definition:}
+		
+		Zwei Mengen A und B heißen genau dann \underline{gleichmächtig}, wenn es eine Bijektion von A nach B gibt.
+		
+		\bigskip
+		
+		Notation: $A \approx B$
+		
+		Formal: $A \approx B \hspace*{1mm} \Leftrightarrow \hspace*{1mm} \exists (f) (f: A \xrightarrow[\text{auf}]{1-1} B)$
+		}}
+		
+		\bigskip
+		
+		Wenn A und B gleichmächtig sind, enthalten beide Mengen \underline{gleich viele} Elemente.
+		Haben zwei Mengen diesselbe Anzahl an Elementen, so lässt sich in jedem Fall eine Bijektion zwischen ihnen herstellen,
+		sodass diese gleichmächtig zueinander sind.
+		
+		\underline{Wichtige Sätze:}
+		
+		{
+			\begin{singlespace}
+			a) $A \approx A$
+			
+			b) $A \approx B \Rightarrow B \approx A$ \hspace*{3mm} (Kommutativität)
+			
+			c) $(A \approx B \land B \approx C) \Rightarrow A \approx C$
+			\end{singlespace}
+		}
+		
+		\bigskip
+		
+		\underline{Beweise:}
+		
+		a) Die Identitätsfunktion, die jedes Element a aus A auf die Elemente $I_A$ aus A 
+		abbildet, ist definiert als $I_A(x) = x$.
+		Somit liefert $I_A$ eine Bijektion von A nach A (zu sich selbst). \hspace*{2mm} q.e.d.
+		
+		b) Wenn f: $A \xrightarrow[\text{auf}]{1-1} B$ gilt, dann folgt daraus $f^{-1}$: $B 
+		\xrightarrow[\text{auf}]{1-1} A$ \hspace*{1mm}$\Leftrightarrow \hspace*{1mm} B \approx A$. \hspace*{2mm} q.e.d.
+		\footnote{
+			Die inverse Funktion zu einer bijektiven Funktion ist ebenfalls bijektiv.
+			Vgl. F. Kahlhoff et all, Skript zu den Vorlesungen Mathematik für Informatiker I und II, 2009/10, 
+			page.mi.fu-berlin.de/baumeist/Mafi-Skript.pdf, zuletzt abgerufen am 3.11.2021, 19:05, S. 16
+		}
+		
+		c) Wenn f: $A \xrightarrow[\text{auf}]{1-1} B$ und g: $B \xrightarrow[\text{auf}]{1-1} C$ gilt, dann
+		folgt daraus: $g \circ f$: $A \xrightarrow[\text{auf}]{1-1} C$ \hspace*{1mm}$\Leftrightarrow \hspace*{1mm} A \approx C$. \hspace*{2mm} q.e.d.
+		\footnote{
+			Die Komposition zweier bijektiven / injektiven Funktionen ist ebenfalls bijektiv / injektiv. Vgl. S. 15
+		}
+		
+		\subsubsection*{b) Ungleichmächtige Mengen}
+		
+		\fbox{\parbox{\linewidth}{
+			\underline{Definition:} {\color{blue}Höchstens gleichmächtige Mengen}
+			
+			Genau dann, wenn es eine Injektion von A nach B gibt,
+			heißt A \underline{höchstens gleichmächtig} zu B.
+			
+			\bigskip
+			
+			Notation: $A \precsim B$ (,,A höchstens gleichmächtig zu B'')
+			
+			Formal: $A \precsim B \hspace*{1mm} \Leftrightarrow \hspace*{1mm} \exists (f) (f: A \xrightarrow{1-1} B)$
+		}}
+		
+		Ist A höchstens gleichmächtig zu B, so hat die Menge B \underline{mindestens}
+		so viele Elemente wie die Menge A bzw. die Menge A \underline{höchstens} so viele
+		Elemente wie B.
+		
+		\bigskip
+		
+		\fbox{\parbox{\linewidth}{
+			\underline{Definition:} {\color{blue}Weniger mächtige Mengen}
+			
+			Die Menge A heißt genau dann \underline{weniger Mächtig} als B, wenn
+			es eine Injektion von A nach B gibt, aber zugleich keine Bijektion 
+			von A nach B existiert.
+			
+			\bigskip
+			
+			Notation: $A \prec B$ (,,A weniger mächtig als B'')
+			
+			Formal: $A \prec B \hspace*{1mm} \Leftrightarrow \hspace*{1mm} (A \precsim B) \land (A \not \approx B)$
+		}}
+		
+		Ist A weniger mächtig als B, so hat die Menge B mehr Elemente als A bzw. die Menge A weniger als B.
+		
+		\underline{Wichtige Sätze:}
+		
+		{
+			\begin{singlespace}
+				a) $A \precsim A$
+				
+				b) $A \precsim B \land B \precsim C \Rightarrow A \precsim C$
+				
+				c) A \subseteq B \Rightarrow A \precsim B
+				
+				d) A \precsim B \Leftrightarrow (A \prec B \lor A \approx B)
+			\end{singlespace}
+		}
+		
+		\underline{Beweise:}
+		
+		a) Die Identitätsfunktion liefert eine Bijektion von A nach A, 
+		wodruch hier gleichzeitig die Injektion und Surjektion von A nach A 
+		gewährleistet wurde. Also gilt: $A \precsim A$. \hspace*{2mm} q.e.d.
+		
+		b) Wenn f: $A \xrightarrow{1-1} B$ und g: $B \xrightarrow{1-1} C$ gilt, dann folgt daraus
+		$g \circ f$: $A \xrightarrow{1-1} C$.$^2$ $\blacksquare$
+		
+		c) Wenn $A \subseteq B$ ist, dann bildet die Identitätsfunktion $I_A$ jedes Element a aus A 
+		jeweils auf dieselben Elemente a aus B ab. Für den Fall, dass $A \subset B$ gilt: 
+		Für alle anderen Elemente b aus B, die nicht in a sind, gibt es kein Element aus A.
+		$\forall a, b \in B$ gibt es höchstens ein Element a aus A.
+		Daraus folgt: $I_A$: $A \xrightarrow{1-1} B \Leftrightarrow A \precsim B$.
+		
+		d) Wenn $A \precsim B$ gilt, so ist $A \approx B$ per Definition genau dann, wenn $A \not \prec B$ ist.
+		Im Gegensatz dazu ist $A \precsim B$ offensichtlich, wenn $A \prec B$ oder $A \approx B$ ist.
+		
+		\subsection*{3. Der Satz von Cantor}
+		
+		\fbox{\parbox{\linewidth}{
+			Jede Menge A ist weniger mächtig als ihre eigene Potenzmenge $\mathcal{P}(A)$:
+			\[
+				A \prec \mathcal{P}(A)
+			\]
+		}}
+		
+		\subsubsection*{Beweis}
+		
+		$A \prec \mathcal{P}(A)$ gilt per Definition genau dann, wenn 
+		$A \precsim \mathcal{P}(A) \land A \not \approx \mathcal{P}(A)$.
+		
+		Im Folgenden zeigen wir nun, dass $A \precsim \mathcal{P}(A)$ und 
+		$A \not \approx \mathcal{P}(A)$ gelten.
+		
+		\underline{1) $A \precsim \mathcal{P}(A)$:}
+		
+		$A \precsim \mathcal{P}(A) \hspace*{1mm} \Leftrightarrow \hspace*{1mm} \exists (f) (f: A \xrightarrow{1-1} \mathcal{P}(A))$
+		
+		Wir suchen eine Injektion f von A nach $\mathcal{P}(A)$.
+		Für jedes Element x in A lässt sich jeweils eine Teilmenge $\{x\} \subseteq A$ bilden.
+		Jeweils jede dieser Teilmengen $\{x\}$ ist zugleich jeweils eine Element aus $\mathcal{P}(A)$.
+		Also $\{x\} \in \mathcal{P}(A)$.
+		$\mathcal{P}(A)$ hat mindestens genau soviele Element wie A selbst. 
+		Jedes Element x aus A wird durch die Injektion f: $A \rightarrow \mathcal{P}(A)$ mit
+		$x \mapsto \{x\}$ jeweils auf ein anderes Element $\{x\}$ aus $\mathcal{P}(A)$ abgebildet.
+		
+		$\blacksquare$
+		
+		\underline{2) $A \not \approx \mathcal{P}(A)$:}
+		
+		Wir haben vorher gezeigt, dass $A \precsim \mathcal{P}(A)$ bzw. dass die Abbildung 
+		f: $A \rightarrow \mathcal{P}(A)$ injektiv ist.
+		Diese Erkenntnis schließt jedoch nicht die möglichkeit aus, dass die Abbildung 
+		gleichzeitig auch bijektiv sein könnte.
+		Wir zeigen also, dass es keine Bijektion von A nach $\mathcal{P}(A)$ gibt,
+		d.h. $A \not \approx \mathcal{P}(A)$.
+		
+		Dazu nehmen wir an, dass $A \approx \mathcal{P}(A)$ gelte, und es deshalb eine
+		bijektive Abbildung g: $A \xrightarrow{1-1} \mathcal{P}(A)$ gäbe.
+		
+		Wir definieren eine Menge $B = \{y \in A: y \not \in g(y)\}; \hspace*{1mm} g(y) \in \mathcal{P}(A)$
+		
+		% Abbildung!!!
+		
+		B enthält alle Elemente y aus A, die in ihrem Funktionswert g(y) liegen.
+		B muss also eine Teilmenge von A sein: $A \subseteq B$.
+		B ist dann auch ein Element aus $\mathcal{P}(A)$: $B \in \mathcal{P}(A)$
+		
+		Es gilt: $B = g(y)$ für \underline{einige} y aus A.
+		
+		Per Definition der Menge B sind alle Element y aus B keine Elemente von $g(y)$.
+		Also $y \in B \Leftrightarrow < \not \in g(y)$.
+		
+		Da $B = g(y)$ für einige y aus A gilt, gibt es y aus B die gleichzeitig in $g(y)$ sind.
+		$\exists y \in B: y \in g(y)$
+		
+		Per Definition gibt es keine y in B, die gleichzeitig in $g(y)$ enthalten sind.
+		
+		Wir erhalten einen Widerspruch.
+		Also muss unsere Annahme $A \approx \mathcal{P}(A)$ falsch sein.
+		$\blacksquare$
+		
+		Damit haben wir die Gültigkeit des Satzes von Cantor bewiesen.
+		$\blacksquare$
+		
+		\section*{II. Endliche Mengen}
+		
+		\subsection*{1. Endliche Mengen}
+		
+		Wir definieren folgende Menge: $P_n = \{k \in \mathbb{N} | k \le n\}$ mit $n \in \mathbb{N}$
+		
+		In der Menge $P_n$ sind alle Elemente k aus $\mathbb{N}$ enthalten, die kleiner gleich n aus
+		$\mathbb{N}$ sind. $P_n$ lässt sich in der Form als:
+		\[
+			P_n = \{1;2;3;...;n-1;n\}
+		\]
+		darstellen.
+		
+		n gibt dabei die Anzahl der Elemente der Menge P an. $P_n$ hat also n Elemente und somit 
+		\underline{endlich} viele Elemente.
+		
+		\underline{Beispiele zur Vorstellung:}
+		
+		$P_1 = \{1\}$ hat 1 Element
+		
+		$P_2 = \{1; 2\}$ hat 2 Elemente
+		
+		$P_3 = \{1; 2; 3\}$ hat 3 Elemente
+		
+		\bigskip
+		
+		\fbox{\parbox{\linewidth}{
+			\underline{Definition:}
+			
+			Eine beliebige Menge A heißt genau dann \underline{endlich}, wenn 
+			sie leer ist oder wenn es eine natürliche Zahl n aus $\mathbb{N}$ gibt,
+			sodass die Abbildung f: $A \rightarrow P_n$ bijektiv ist bzw. $A \approx P_n$ gilt.
+			
+			\bigskip
+			Formal: A ist endlich $\Leftrightarrow A = \emptyset \lor \exists n \in \mathbb{N}: (A \approx P_n)$
+			
+			\bigskip
+			\underline{\textbf{Fazit}:} Jede Menge A besitzt jeweils genau so viele Elemente wie jeweils ihre zugehörige
+			gleichmächtige Menge $P_n$ und somit \underline{endlich viele} Elemente.
+			
+			Einfach gesagt folgt daraus, dass eine Menge A genau dann endlich heißt, wenn sie endlich
+			viele Elemente hat.
+		}}
+		
+		\bigskip
+		
+		\subsection*{2. Unendliche Mengen}
+		
+		\fbox{\parbox{\linewidth}{
+			\underline{Definition:}
+					
+			Eine beliebige Menge A heißt genau dann unendlich, wenn sie nicht endlich ist.
+			
+			\bigskip
+			
+			Formal: A ist unendlich $\Leftrightarrow \lnot (A = \emptyset \lor \exists (n \in \mathbb{N}): (A \approx P_n)$
+			$\Leftrightarrow a \not = \emptyset \land \forall (n \in \mathbb{N}): (A \not \approx P_n)$
+			
+			\bigskip
+			\underline{\textbf{Fazit}:} Jede unendliche Menge A ist zu keiner einzigen endlichen Menge $P_n$ mit endlich vielen Elementen n gleichmächtig.
+			
+			Es folgt daraus: Jede unendliche Menge A besitzt unendlich viele Elemente, d.h. jede Menge A heißt genau dann
+			unendlich, wenn sie unendlich viele Elemente hat.
+		}}
+		
+		\subsection*{3. Eigenschaften endlicher und unendliche Mengen}
+		
+		\subsubsection*{a) Endliche Mengen}
+		
+		{
+			\begin{singlespace}
+				1) Jede endliche Menge, die gleichmächtig zu einer endlichen Menge ist, ist auch endlich.
+				
+				2) Wenn A endlich ist, so ist $A \cup \{y\}$ auch endlich
+				
+				3) Jede Teilmenge D einer endlichen Menge B ist endlich. 
+				
+				4) Wenn B endlich ist und $D \precsim B$ gilt, dann ist D ebenfalls endlich.
+				
+				5) Wenn A eine endliche Menge und B eine beliebige Menge ist, dann sind die Mengen $A \cap B$ und $A \backslash B$ auch endlich.
+				
+				6) Die Vereinigung endlich vieler Mengen ist wieder eine endliche Menge
+				
+				7) Jede endliche Menge B ist nicht gleichmächtig zu ihren echten Teilmengen.
+				
+				8) Wenn A und B endlich sind, so sind auch $A \cup B$ endlich.
+			\end{singlespace}
+		}
+		
+		\underline{Beweise:}
+		
+		1) ohne Beweis
+		
+		2) a) $A = \emptyset$: $A \cup \{y\} = \{y\} \approx P_1$ ist endlich
+		
+		b) $A \approx P_n$: 
+		
+		$\alpha$ $y \in A$: $A \cup {y} = A \approx P_n$ ist endlich
+		
+		$\beta$ $y \not \in A$: $A \cup {y} \approx P_{n+1}$ ist endlich
+		
+		3) Vgl. 'Number Systems and the Foundation of Analysis',  S. 299
+		
+		4) Es gilt: B ist endlich und $D \precsim B$. Dann gibt es eine Injektion von D nach B und das bedeutet, dass es eine Bijektion von D auf eine 
+		Teilmenge von B gibt. Diese Teilmenge von B ist nach Satz 3 endlich und daraus folgt, dass D nach Satz 1 endlich ist.
+		
+		5) $A \cap B$ und $A \backslash B$ sind Teilmengen der endlichen Menge A und somit endlich.
+		
+		6) Verzicht auf Beweis. Beweis wird durch das Prinzip von Inklusion und Exklusion ausgeführt.
+		
+		7) 
+		
+		\underline{Annahmen}
+		
+		1) $B = \emptyset$: B hat keine echten Teilmengen
+		
+		2) $B \approx P_n$: Die Funktion $\varphi$ liefiert eine Bijektion von B nach $P_n$, d.h. $\varphi$: $B \xrightarrow[auf]{1-1} P_n}$
+		
+		Sei C eine beliebige Teilmenge von B.
+		Wir müssen jetzt zeigen, dass $C \not \approx B$ gilt:
+		
+		\[\varphi\text{: } C \xrightarrow[auf]{1-1} \varphi[C] \text{ mit } \varphi[C] = \{\varphi(c) | c \in C\}\]
+		
+		Die Menge $\varphi[C] = \{\varphi(c) | c \in C\} \subset P_n$ ist nicht gleichmächtig
+		zu $P_n$, d.h. $\varphi[C] \not \approx P_n$.\footnote{
+			Diese Schlussfolgerung ist nach folgendem Satz zulässig:
+			
+			$\forall A | (A \subset P_n): A \not \approx P_n$
+			
+			Beweis: 'Number Systems and the Foundation of Analysis', S.298, Lemma D6
+		}
+		
+		Da $\varphi[C] \approx C$ gilt, folgt daraus $C \not \approx P_n$ bzw. $C \not \approx B$.
+		
+		8) Vgl. 'Number Systems and the Foundation of Analysis', S. 301
+		
+		\subsubsection*{b) Unendliche Mengen}
+		
+		1) Jede Menge, die gleichmächtig zu einer unendlichen Menge ist, ist auch unendlich
+		
+		2) Wenn die Menge D unendlich ist und D eine Teilmenge von B, dann ist B ebenfalls unendlich.
+		
+		3) Wenn D unendlich ist, und $D \precsim B$ gilt, dann ist B auch unendlich.
+		
+		4) Die Menge P der natürlichen Zahlen ist gleichmächtig zu einer richtigen Teilmenge von P selbst.
+		
+		5) Unendliche Mengen besitzen sowohl unendliche als auch endliche Teilmengen.
+		
+		\underline{Beweise:}
+		
+		1) Ohne Beweis
+		
+		2) % ....
+		
+		3) Wenn D unendlich ist, und es eine Injektion von D nach B gibt, so gibt es immer eine Bijektion 
+		von D auf eine Teilmenge von B.
+		Diese Teilmenge von B ist nach Satz 1 unendlich und somit ist B nach Satz 2 auch unendlich.
+		
+		4) $P \backslash \{1\}$ ist eine Teilmenge von P, die gleichmächtig zu P selbst ist:
+		
+		Die Bijektion $\varphi$: $P \xrightarrow[auf]{1-1} P \backslash \{1\}$ ist durch den Funktionsterm
+		$\varphi(n) = n + 1$ gegeben.
+		
+		5) Ohne Beweis
+		
+		\section*{III. Abzählbare und Überabzählbare Mengen}
+		
+		\subsection*{1. Abzählbare Menge}
+		
+		Eine beliebige Menge A heißt genau dann...
+		
+		a) ... endlich abzählbar, wenn sie endlich ist und somit endlich viele Elemente hat. Ihre Elemente lassen
+		   sich mithilfe  der Natürlichen Zahlen ,,abzählen'' bzw. ,,durchnummerieren''.
+		
+		b) ...unendlich abzählbar, wenn sie unendlich ist und es dabei eine Bijektion von A auf die Menge $\mathbb{N}$ der natürlichen Zahlen
+		gibt bzw. A gleichmächtig zu $\mathbb{N}$ ist.
+		
+		\underline{Also:}
+		A ist unendlich abzählbar $\Leftrightarrow (\exists f): f: A \xrightarrow[auf]{1-1} \mathbb{N} \Leftrightarrow A \approx \mathbb{N}$
+		
+		Jede unendliche abzählbare Menge A ist gleichmächtig zur Menge der natürlichen Zahlen. Die Menge A hat in dem Sinne dann genauso viele unendliche
+		Elemente wie $\mathbb{N}$. Ihre Elemente lassen sich dann aufgrund ihrer bijektiven Beziehung zu $\mathbb{N}$ mithilfe der natürlichen Zahlen ,,ins Unendliche''
+		durchnummerieren bzw. die natürlichen Zahlen reichen dann genau aus, alle Elemte von A abzuzählen.
 
     % Hier endet die eigentliche Arbeit
 
@@ -102,6 +550,9 @@
     \appendix
 
     \newpage
+		
+		- F. Kahlhoff et all, Skript zu den Vorlesungen Mathematik für Informatiker I und II, 2009/10, 
+			page.mi.fu-berlin.de/baumeist/Mafi-Skript.pdf, zuletzt abgerufen am 3.11.2021, 19:05
 
     \begin{thebibliography}{xxxxxxxxxxxxxxxxxxx}
        \bibitem[BMBF, 2003]{bmbf}"'IT-Ausstattung der allgemein bildenden und berufsbildenden
