@@ -136,7 +136,7 @@
     also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Z})$, welche nach unten beschränkt ist,
     (Vgl. Begriffsdefinition im nachfolgendem Teil) und nicht gleich den rationalen Zahlen selbst ist.
 
-    2. Es muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b \ge a \rightarrow b \in r$, d.h.
+    2. Es muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b \ge a \Rightarrow b \in r$, d.h.
     für eine rationale Zahl in einem dedekind'schen Schnitt müssen alle größeren rationalen Zahlen auch enthalten sein,
     sodass der dedekind'sche Schnitt keine `Lücken` hatt.
 
@@ -190,7 +190,7 @@
 
     Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$.
 
-    Diese Gleichung sollte idealerweise auch für zwei Schnitte aus rationalen Zahlen gelten:
+    Diese Gleichung sollte idealerweise auch für zwei Schnitte, die rationalen Zahlen repräsentieren, gelten:
 
     Sei $a, b \in \mathbb{Q}$ mit $a > b$, und $A$ und $B$ die beiden dedekind'schen Schnitte von a und b.
 
@@ -209,7 +209,7 @@
     Für den anderen Teil nehmen wir $y = a$ und erhalten, dass a nicht in A enthalten ist, aber in B enthalten sein
     muss.
 
-    Damit ist die Ordnung zweier Schnitte zweier ratioanler Zahlen erhalten.
+    Damit ist die Ordnung zweier Schnitte zweier rationaler Zahlen die gleiche wie in den rationalen Zahlen selbst.
 
     \newpage
 
@@ -616,7 +616,7 @@
     $a, b \in \mathbb{R} \land a > b \Rightarrow f(a) > f(b)$
 
     Für die reellen Zahlen ist eine solche Funktion die folgende:
-    \[f: n \rightarrow \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q > n\}\]
+    \[f: n \mapsto \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q > n\}\]
 
     Sei nun N die Menge aller natürlicher Zahlen kleiner als m sind, also
     \[N = \{n \in \mathbb{N} \mspace{4mu} | \mspace{4mu} f(n) \le m\}\]
