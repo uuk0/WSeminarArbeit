@@ -311,8 +311,26 @@
     Die Subtraktion ist wie üblich Definiert mit:
     $A - B := A + (-B)$
 
-    Weiterhin ist damit der Betrag eines dedekindsch'schen Schnittes definiert als:
+    Weiterhin ist damit der Betrag eines dedekind'schen Schnittes definiert als:
     \[|A| := \begin{cases}A \mspace{10mu} wenn \mspace{6mu} A \ge 0 \\ -A \mspace{10mu} sonst\end{cases}\]
+
+    \subsubsection{Addition zweier rationaler Zahlen als dedekind'sche Schnitte}
+
+    Seien a und b zwei rationale Zahlen, und A und B ihre dedekind'schen Schnitte.
+
+    Wir können A + B schreiben als:
+    \[
+        \{x + y \mspace{4mu} | \mspace{4mu} x \in A \land y \in B\}
+    \]
+    Oder auch:
+    \[
+        = \{x + y \mspace{4mu} | \mspace{4mu} x, y \in \mathbb{Q} \land x > a \land y > b\} =
+    \]
+    \[
+        = \{q \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q} \land q > (a + b)\} = schnitt(a + b)
+    \]
+
+    Damit ist die Addition gleich der der rationalen Zahlen.
 
     \subsection{Multiplikation dedekidsch'scher Schnitte}
 
@@ -347,19 +365,15 @@
     Der Einfachheit halber seien a, b und c zunächst positiv.
 
     Wir können d schreiben als:
-
     \[d = \{m * n \mspace{4mu} | \mspace{4mu} m \in \{x * y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\} \land n \in c\}\]
 
     Und durch Vereinfachung:
-
     \[d = \{(x * y) * n \mspace{4mu} | \mspace{4mu} (x \in a \land y \in b) \land n \in c\}\]
 
     Und weiterhin:
-
     \[d = \{x * y * n \mspace{4mu} | \mspace{4mu} x \in a \land y \in b \land n \in c\}\]
 
     Was sich umformen lässt zu:
-
     \[d = \{x * m \mspace{4mu} | \mspace{4mu} x \in a \land m \in \{y * n \mspace{4mu} | \mspace{4mu} y \in b \land n \in c\}\}\]
 
     Auf dem selben weg kommen wir zur geforderten Gleichung $d = a * (b * c)$.
@@ -397,6 +411,26 @@
     Und weiterhin definieren wir die Division mithilfe:
 
     $a \div b := a * b^{-1}$
+
+    \subsubsection{Multiplikation zweier positiven rationalen Zahlen als dedekind'sche Schnitte}
+
+    Seien a und b zwei rationale Zahlen und A und B ihre dedekind'schen Schnitte.
+
+    Wir können $A * B$ schreiben als:
+
+    \[
+        \{x * y \mspace{4mu} | \mspace{4mu} x \in A \land y \in B\} =
+    \]
+    \[
+        = \{x * y \mspace{4mu} | \mspace{4mu} x \in \mathbb{Q} \land x > a \land y \in \mathbb{Q} \land y > b\} =
+    \]
+    \[
+        = \{q \mspace{4mu} | \mspace{4mu} q \in \mathbb{Q} \land q > (a * b)\} = schnitt(a * b)
+    \]
+
+    Damit ist die Multiplikation gleich der in den rationalen Zahlen.
+
+    \newpage
 
     \subsection{Distributivität}
 
@@ -538,7 +572,7 @@
 
     Damit ist unser Körper wirklich ein Körper.
 
-    \newpage
+    % \newpage
 
     \section{Abgrenzung zu den rationalen Zahlen}
 
@@ -628,7 +662,7 @@
     Somit gibt es zu jeder reellen Zahlen m mindestens eine natürliche Zahl n (hier z.B. s + 1), die größer als m ist,
     und  damit ist $\mathbb{R}$ archimedisch.
 
-    \newpage
+    % \newpage
 
     \section{Ausblick}
 
