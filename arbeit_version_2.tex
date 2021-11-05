@@ -243,8 +243,7 @@
 
     Wir definieren zunächst die Addition folgendermaßen:
 
-    $a + b \coloneqq \{x + y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\}$
-    \footnote{
+    $a + b \coloneqq \{x + y \mspace{4mu} | \mspace{4mu} x \in a \land y \in b\}$\footnote{
         Vgl. Richard Dedekind, Stetigkeit und Irrationale Zahlen, S. 17ff
     }
 
@@ -276,9 +275,9 @@
     \[= \{y + x \mspace{4mu} | \mspace{4mu} y \in b \land x \in a\} =\]
     \[= b + a\]
 
-    Das neutrale Element ist die Menge $\{a > 0 \mspace{4mu} | \mspace{4mu} a \in \mathbb{Q}\}$.
+    Das neutrale Element ist die Menge $\{a \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a  > 0\}$.
     Bei Addition kommen nur Elemente größer-gleich der ursprünglichen Elemente heraus, und damit bleibt
-    der dedekidsch'sche Schnitt identisch.
+    der dedekind'sche Schnitt identisch.
 
     \subsubsection{Assoziativität}
 
@@ -553,7 +552,10 @@
     keine rationale Zahl ist, sich aber beliebig annähern lässt, und somit zu jeder rationalen Zahl kleiner als
     $\sqrt{2}$ eine existiert, die näher an $\sqrt{2}$ ist.
 
-    Wir definieren darauf den Begriff der Vollständigkeit:
+    Wir definieren darauf den Begriff der Vollständigkeit\footnote{
+        Eine alternative, gleichbedeutende Definition der Vollständigkeit durch Cauchy Folgen lässt sich finden unter:
+        `Proofs in Competition Math: Vol. 1', S. 107f
+    }:
 
     Eine geordnete Menge M ist genau dann Vollständig, wenn alle Teilmengen von M, die nach unten beschränkt sind,
     ein Infimum in M besitzen.
@@ -598,8 +600,16 @@
 
     \section{Der Archimedische Körper der reellen Zahlen}
 
-    Ein geordneter Körper M ist dann archimedisch, wenn für alle seiner Elemente m eine natürliche Zahl n existiert,
-    die größer als m ist.
+    Ein geordneter Körper M ist dann archimedisch, wenn für alle $x, y > 0 \in M$ eine natürliche Zahl n
+    existiert, sodass $nx > y$ ist.\footnote{
+        Vgl. `Proofs in Competition Math: Vol. 1', S. 108
+    }
+
+    Definiert M die Umkehrung der Multiplikation, so reicht es zu beweisen, dass $n > \frac{y}{x}$, oder
+    auch $n > x'$ für ein $x' \in M$.
+
+    Also ist ein geordneter Körper M, in dem die Division definiert ist, dann archimedisch,
+    wenn für alle seiner Elemente m eine natürliche Zahl n existiert, die größer als m ist.
 
     Zunächst benötigt M eine Funktion $f: \mathbb{N} \rightarrow M$,
     welche einer natürlichen Zahl ein Element aus M zuordnet.
@@ -608,7 +618,6 @@
     $a, b \in \mathbb{R} \land a > b \Rightarrow f(a) > f(b)$
 
     Für die reellen Zahlen ist eine solche Funktion die folgende:
-
     \[f: n \rightarrow \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q > n\}\]
 
     Sei nun N die Menge aller natürlicher Zahlen kleiner als m sind, also
@@ -649,21 +658,24 @@
 
     \section{Literaturverzeichnis}
 
-    - Uwe Storch, Hartmut Wiebe: "Grundkonzepte der Mathematik: Mengentheoretische, algebraische, topologische Grundlagen
-    sowie reelle und komplexe Zahlen", Springer Spektrum Verlag, 2017
-
-    - Prof. Dr. Siegfried Echterhoff: "Ergänzung zur Vorlesung Analysis I WS08/0, Konstruktion von $\mathbb{R}$",
-    https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/ $\mspace{8mu}$ Skript/Konstruktion\_reelle\_Zahlen.pdf,
-    zuletzt abgerufen am 23.10.2021
+    - Courant, R. and Robbins, H. `Alternative Methods of Defining Irrational Numbers. Dedekind Cuts.', 2. Auflage,
+    S. 71f
 
     - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf, zuletzt abgerufen am 26.10.2021
 
-    - Courant, R. and Robbins, H. "Alternative Methods of Defining Irrational Numbers. Dedekind Cuts.", 2. Auflage,
-    S. 71f
+    - Dedekind Cuts. Brilliant.org. Abgerufen am 3.11.2021, 9:30, https://brilliant.org/wiki/dedekind-cuts/
 
-    - Dedekind Cuts. Brilliant.org. Abgerufen am 3.11.2021, 9:30, https://brilliant.org/ wiki/dedekind-cuts/
+    - Prof. Dr. Siegfried Echterhoff: `Ergänzung zur Vorlesung Analysis I WS08/0, Konstruktion von $\mathbb{R}$',
+    https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/ $\mspace{8mu}$ Skript/Konstruktion\_reelle\_Zahlen.pdf,
+    zuletzt abgerufen am 23.10.2021
 
-    - Richard Dedekind, Stetigkeit und Irrationale Zahlen, Vieweg+Teubner Verlag, 1960
+    - Uwe Storch, Hartmut Wiebe: `Grundkonzepte der Mathematik: Mengentheoretische, algebraische, topologische Grundlagen
+    sowie reelle und komplexe Zahlen', Springer Spektrum Verlag, 2017
+
+    - Alexander Toller, Dennis Chen, Freya Edholm: `Proofs in Competition Math: Vol. 1', Version 1.1,
+    Unabhängig veröffentlicht, 2019
+
+    - Richard Dedekind, `Stetigkeit und Irrationale Zahlen', Vieweg+Teubner Verlag, 1960
 
     \newpage
 
