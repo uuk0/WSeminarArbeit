@@ -139,10 +139,14 @@
 
     2. Es muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b \ge a \Rightarrow b \in r$, d.h.
     für eine rationale Zahl in einem dedekind'schen Schnitt müssen alle größeren rationalen Zahlen auch enthalten sein,
-    sodass der dedekind'sche Schnitt keine `Lücken` hatt.
+    sodass der dedekind'sche Schnitt keine `Lücken` hat.
 
     3. Für einen dedekind'schen Schnitt r gibt es keine rationale Zahl q, für die $q \in r$ und $\forall x \in r: q \le x$,
-    also r besitzt keine kleinste rationale Zahl.
+    also r besitzt keine kleinste rationale Zahl.\footnote{
+        Nicht zu verwecheln mit `r ist nach unten unbeschränkt'. Wir finden zwischen allen Elementen
+        aus r und jeder beliebigen unteren Schranke von r beliebig viele Zahlen aus r, und nicht alle Elemente aus
+        $\mathbb{Q}$, die kleiner als ein Element aus r sind, sind wieder in r.
+    }
 
     Wir definieren nun die Menge $\mathbb{R}$ als die Menge aller dedekind'schen Schnitten, also der Menge aller
     Elemente der Potenzmenge der rationalen Zahlen, für die obige drei Eingenschaften gelten.
@@ -155,7 +159,7 @@
 
     \section{Begriffsdefinitionen}
 
-    Zu einer Teilmenge m einer Menge M mit einer Ordnung, wie sie die Menge der rationalen Zahlen darstellt,
+    Zu einer Teilmenge m einer geordneten Menge M, wie sie die Menge der rationalen Zahlen darstellt,
     kann es obere und untere Schranken geben.
 
     Eine obere Schranke s ist ein Element aus M, für das alle Elemente aus m kleiner als s sind.
@@ -170,7 +174,7 @@
 
     \subsection{Übergang von den rationalen zu den reellen Zahlen}
 
-    Wir müssen eine Funktion definieren, die jeder rationalen Zahlen q einen dedekind'schen Schnitt r zuordnet.
+    Wir wolle eine Funktion definieren, die jeder rationalen Zahlen q einen dedekind'schen Schnitt r zuordnet.
 
     Eine solche Funktion ist:
 
@@ -185,7 +189,6 @@
     \section{Ordnung in den reellen Zahlen}
 
     Seien a und b zwei dedekind'sche Schnitte. Wir definieren
-
     \[A > B := A \subset B\]
 
     Und weiterhin $a < b := b > a$, $a \ge b := \lnot (a < b)$ und $a \le b := \lnot (a > b)$.
@@ -220,14 +223,14 @@
 
     Wir schreiben für $+(a, b)$ auch $a + b$ und analog für $*(a, b)$ auch $a * b$.
 
-    Für die Operationen `+' und `*' muss jeweils gelten, dabei ist $\emptyset$ ein Operationsspezifisches
+    Für die Operationen `+' und `*' muss jeweils gelten, dabei ist $\emptyset$ ein operationsspezifisches
     neutrales Element:
 
-    - $\forall x, y, t \in M: x \bigoplus (y \bigoplus z) = (x \bigoplus y) \bigoplus z$  (Assoziativ)
+    - $\forall x, y, t \in M: x \bigoplus (y \bigoplus z) = (x \bigoplus y) \bigoplus z$  (Assoziativität)
 
-    - $\forall x, y \in M: x \bigoplus y = y \bigoplus x$  (Kommutativ)
+    - $\forall x, y \in M: x \bigoplus y = y \bigoplus x$  (Kommutativität)
 
-    - $\exists x \in M: \forall y \in M: x \bigoplus y = y$  (Existenz eines neutralen Elements)
+    - $\exists x \in M: \forall y \in M: x \bigoplus y = y$  (Existenz eines neutralen Elements, hier x)
 
     - $\forall x \in M: \exists y \in M: x \bigoplus y = \emptyset$  (Existenz einer Inversen)
 
@@ -249,15 +252,18 @@
 
     $a + b$ ist nicht leer, da $a + b$ alle Kombinationen aus a und b enthält, und a und b nicht leer sind.
 
-    $a + b$ enthält nicht alle rationalen Zahlen, da die Zahl $infimum(a) + infimum(b) - 1$ nicht in $a + b$
+    $a + b$ enthält nicht alle rationalen Zahlen, da die Zahl $UntereSchranke(a) + UntereSchranke(b) - 1$ nicht in $a + b$
     enthalten sein kann, da dafür ein Element kleiner als das Infimum in a oder b enthalten sein müsste, was
     aber nach der Definition unmöglich ist.
 
-    Es ist ebenfalls klar, das $a + b$ keine Lücken hat.
+    $a + b$ hat auch keine Lücken:
+
     Sei m eine Zahl aus dem Schnitt $a + b$ und n eine Zahl die größer als m ist, aber nicht in $a + b$ enthalten ist.
     Sei $x \in a$ und $y \in b$, sodass $x + y = m$. Da a neben x auch die Zahl $x + (n - m)$ enthalten muss,
     muss auch $x + (n - m) + y$ in $a + b$ enthalten sein. Ersetzen von $x + y$ durch m ergibt $n - m + m = n$,
     was bedeutet, dass n auch in $a + b$ enthalten sein muss, was aber im widerspruch zu unser Annahme steht.
+
+    $a + b$ hat weiterhin kein kleinstes Element:
 
     Sei $x + y$ das kleinstes Element in $a + b$. Sei weiterhin x' ein Element aus a.
     Sei $y' = x + y - x'$. Diese Zahl kann nicht $\in b$ sein, da sonst $x' + y' > x + y \Leftrightarrow y' > x + y - y'$.
@@ -276,6 +282,8 @@
     Das neutrale Element ist die Menge $\{a \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a  > 0\}$.
     Bei Addition kommen nur Elemente größer-gleich der ursprünglichen Elemente heraus, und damit bleibt
     der dedekind'sche Schnitt identisch.
+
+    Durch das $\ge$ ist das Ergebnis nach unten Beschränkt, hat aber immer noch kein kleinstes Element.
 
     \subsubsection{Assoziativität}
 
@@ -297,8 +305,7 @@
 
     \[A^- \coloneqq \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a + b > 0 \land a \in A\}\]
 
-    Die Menge ist nicht-leer, da $a + b > 0$ in den rationalen Zahlen Lösungen besitzt, solange $|a| \not = \infty$ und
-    $|b| \not = \infty$.
+    Die Menge ist nicht-leer, da $a + b > 0$ in den rationalen Zahlen immer Lösungen besitzt.
 
     Aus gleichem Grund ist die Menge nicht gleich den rationalen Zahlen, da es für obige Gleichung rationale Zahlen gibt,
     die diese nicht erfüllen.
@@ -311,7 +318,7 @@
     Die Subtraktion ist wie üblich Definiert mit:
     $A - B := A + (-B)$
 
-    Weiterhin ist damit der Betrag eines dedekind'schen Schnittes definiert als:
+    Weiterhin ist damit der Betrag eines dedekind'schen Schnittes (nicht die Mengengröße!) definiert als:
     \[|A| := \begin{cases}A \mspace{10mu} wenn \mspace{6mu} A \ge 0 \\ -A \mspace{10mu} sonst\end{cases}\]
 
     \subsubsection{Addition zweier rationaler Zahlen als dedekind'sche Schnitte}
