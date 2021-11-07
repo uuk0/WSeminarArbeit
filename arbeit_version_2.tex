@@ -143,7 +143,7 @@
 
     3. Für einen dedekind'schen Schnitt r gibt es keine rationale Zahl q, für die $q \in r$ und $\forall x \in r: q \le x$,
     also r besitzt keine kleinste rationale Zahl.\footnote{
-        Nicht zu verwecheln mit `r ist nach unten unbeschränkt'. Wir finden zwischen allen Elementen
+        Nicht zu verwechseln mit `r ist nach unten unbeschränkt'. Wir finden zwischen allen Elementen
         aus r und jeder beliebigen unteren Schranke von r beliebig viele Zahlen aus r, und nicht alle Elemente aus
         $\mathbb{Q}$, die kleiner als ein Element aus r sind, sind wieder in r.
     }
@@ -177,7 +177,6 @@
     Wir wolle eine Funktion definieren, die jeder rationalen Zahlen q einen dedekind'schen Schnitt r zuordnet.
 
     Eine solche Funktion ist:
-
     \[r = \{x > q \mspace{4mu} | \mspace{4mu} x \in \mathbb{Q}\}\]
 
     Im folgenden werden wir sehen, dass diese Definition die Eigenschaften der rationalen Zahlen erhält, wenn
@@ -297,7 +296,7 @@
     \[\{d+c \mspace{4mu} | \mspace{4mu} d \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\}\]
     \[= \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} + C = (A + B) + C\]
 
-    % Dies könnten wir hier noch ausführen, wenn wir noch was brauchen
+    \newpage
 
     \subsubsection{Inverse Element und Subtraktion}
 
@@ -339,9 +338,11 @@
 
     Damit ist die Addition gleich der der rationalen Zahlen.
 
+    \newpage
+
     \subsection{Multiplikation dedekidsch'scher Schnitte}
 
-    Wir definieren $A \times B$ für zwei positive dedekidsch'sche Schnitte A und B folgendermaßen:
+    Wir definieren $A \times B$ für zwei positive dedekind'sche Schnitte A und B folgendermaßen:
 
     \[A \times B \coloneqq \{a * b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\}\]
 
@@ -351,7 +352,7 @@
 
     Sie hat kein kleinstes Element.
 
-    Wir können nun die Multiplikation wiefolgendend mithilfe obiger $\times$-Operation definieren,
+    Wir können nun die Multiplikation wie folgend mithilfe obiger $\times$-Operation definieren,
     dafür verwenden wir folgende Fallunterscheidung:
     \[
         A * B \coloneqq
@@ -363,8 +364,22 @@
         \end{cases}
     \]
 
-    Die Kommutativität für positive Schnitte ist wie bei der Addition klar ersichtlich.
-    Ein Vorzeichen ändert daran nichts, da dieses in der eigentlichen Berechung nicht verwendet wird.
+    Die Kommutativität für positive Schnitte ist wie bei der Addition klar ersichtlich aus der
+    Kommutativität der rationalen Zahlen.
+    Ein Vorzeichen ändert daran nichts, da dieses in der eigentlichen Berechnung nicht verwendet wird.
+
+    \subsubsection{Multiplikation mit -1 ist gleich Inversion}
+
+    Sei D = (-1) * A, wobei D, -1 und A drei dedekind'sche Schnitte sind, und a positiv.
+    Es gilt:
+    \[
+        D = -(|-1| * A) = -(1 * A) = -\{x * a \mspace{4mu} | \mspace{4mu} x \in Schnitt(1) \land a \in A\}
+    \]
+    Der Schnitt zu 1 enthält nur solche Elemente, die größer als 1 sind, aber beliebig nahe an 1.
+    Also entstehen bei $x * a$ nur solche Zahlen, die größer-gleich $a$ sind. Damit bleibt der
+    dedekind'sche Schnitt D identisch, und damit ist das ganze gleich dem gesuchten Wert $-A$.
+
+    \newpage
 
     \subsubsection{Assoziativität}
 
@@ -385,7 +400,16 @@
 
     Auf dem selben weg kommen wir zur geforderten Gleichung $d = a * (b * c)$.
 
-    % Was ist, wenn eines der Elemente negativ ist?
+    Wenn c `-1' ist, können wir schrieben:
+    \[
+        d = -1 * (a * b) = -(a * b) = \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q + x > 0 \land x \in a * b\} =
+    \]
+    \[
+        = \{q \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} q + x * y > 0 \land x \in a \land y \in b\} =
+    \]
+    \[
+        = \{\}
+    \]
 
     \subsubsection{Neutrales Element}
 
@@ -394,6 +418,8 @@
     Dabei ist klar, dass für einen positiven Schnitt a bei Multiplikation mit 1 für jedes Element aus a nur Elemente
     größer-gleich demselben entstehen, und damit keine kleineren Elemente dazukommen, sodass der Schnitt gleich
     bliebt.
+
+    \newpage
 
     \subsubsection{Inverse Element und die Division}
 
@@ -447,7 +473,6 @@
     \subsubsection*{a) $A, B, C \ge 0$}
 
     Wir setzen unsere Definitionen ein und erhalten:
-
     \[
         (A + B) * C = \{x * c \mspace{4mu} | \mspace{4mu} x \in \{a + b \mspace{4mu} | \mspace{4mu} a \in A \land b \in B\} \land c \in C\} =
     \]
@@ -471,13 +496,11 @@
     \subsubsection*{b) $A, B \ge 0 \land C < 0$}
 
     Wir substituieren $C = -C'$ und erhalten:
-
     \[
         = (A + B) * (-1) * C' = (-1) * ((A +< B) * C') = (-1) * (AB + AC') =
     \]
 
     Wir setzten nun $A' = AC'$ und $B' = BC'$ und erhalten mit Substitution der Inversionsformel:
-
     \[
         = \{b \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} x + b > 0 \land x \in (A' + B')\} =
     \]
@@ -489,13 +512,11 @@
     \]
 
     Bei Aufspaltung durch die Rechenregeln dedekind'scher Schnitte:
-
     \[
         = \{b_1 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} a' + b_1 > 0 \land a' \in A'\} + \{b_2 \in \mathbb{Q} \mspace{4mu} | \mspace{4mu} b' + b_2 > 0 \land b' \in B'\} =
     \]
 
-    Und Verwendung der Inversions-formel:
-
+    Und Verwendung der Inversionsformel:
     \[
         = (-A') + (-B') = A*(-C') + B * (-C')
     \]
@@ -509,7 +530,6 @@
     Aufgrund der Bedingung $|A| < |B|$ muss $(-A + B) > 0$ sein.
 
     Wir substituieren $A = -A'$ und erhalten:
-
     \[
         (-A' + B) * C = \{c * x \mspace{4mu} | \mspace{4mu} c \in C \land x \in \{a + b \mspace{4mu} | \mspace{4mu} a \in -A' \land b \in B\}\} =
     \]
