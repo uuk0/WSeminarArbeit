@@ -48,7 +48,11 @@
         \bigskip
         \bigskip
 
-        \textbf{Reelle Zahlen und ihre Arithmetik in der Darstellung der dedekind'schen Schnitte}
+        \vspace*{10mm}
+
+        {\large\textbf{Reelle Zahlen und ihre Arithmetik in der Darstellung der dedekind'schen Schnitte}}
+
+        \vspace*{8mm}
 
         \bigskip
         \bigskip
@@ -135,7 +139,8 @@
 
     1. Ein Dedekind'scher Schnitt r ist eine nicht-leere Teilmenge der rationalen Zahlen $\mathbb{Q}$,
     also ein Element der Potenzmenge $\mathcal{P}(\mathbb{Q})$, welche nach unten beschränkt ist,
-    (Vgl. Begriffsdefinition im nachfolgendem Teil) und weder leer noch gleich den rationalen Zahlen selbst ist.
+    (Vgl. Begriffsdefinition im nachfolgendem Teil) und weder leer (noch gleich den rationalen Zahlen selbst, was aber
+    aus der Beschränktheit folgt) ist.
 
     2. Es muss gelten: $\forall a \in r: \forall b \in \mathbb{Z}: b \ge a \Rightarrow b \in r$, d.h.
     für eine rationale Zahl in einem dedekind'schen Schnitt müssen alle größeren rationalen Zahlen auch enthalten sein,
@@ -153,7 +158,7 @@
 
     \underline{Anmerkung:}
 
-    Je nach Literatur wird ein dedekidsch'scher Schnitt auch als eine nach oben Beschränkte Teilmenge beschrieben,
+    Je nach Literatur wird ein dedekidsch'scher Schnitt auch als eine nach oben beschränkte Teilmenge beschrieben,
     welche kein größtes Element besitzt, oder auch als geordnetes Paar beider Mengen. Der einfachhalthalber
     verwende ich im folgenden nur die obige Definition.
 
@@ -174,16 +179,13 @@
 
     \subsection{Übergang von den rationalen zu den reellen Zahlen}
 
-    Wir wolle eine Funktion definieren, die jeder rationalen Zahlen q einen dedekind'schen Schnitt r zuordnet.
+    Wir wolle eine Funktion f: $\mathbb{N} \rightarrow \mathbb{R}$ definieren, die jeder rationalen Zahlen q einen
+    dedekind'schen Schnitt r zuordnet. Wir werden diese Funktion später noch benötigen.
 
     Eine solche Funktion ist:
     \[r = \{x > q \mspace{4mu} | \mspace{4mu} x \in \mathbb{Q}\}\]
 
-    Im folgenden werden wir sehen, dass diese Definition die Eigenschaften der rationalen Zahlen erhält, wenn
-    wir deren dedekind'sche Schnitt betrachten.
-
     Das Infimum eines solchen Schnittes ist die rationale Zahl selbst, die diesen Schnitt beschreibt.
-    Wir werden später feststellen, das nicht alle dedekind'schen Schnitte ein rationales Infimum besitzen.
 
     \section{Ordnung in den reellen Zahlen}
 
@@ -261,6 +263,8 @@
     Sei $x \in a$ und $y \in b$, sodass $x + y = m$. Da a neben x auch die Zahl $x + (n - m)$ enthalten muss,
     muss auch $x + (n - m) + y$ in $a + b$ enthalten sein. Ersetzen von $x + y$ durch m ergibt $n - m + m = n$,
     was bedeutet, dass n auch in $a + b$ enthalten sein muss, was aber im widerspruch zu unser Annahme steht.
+
+    \newpage
 
     $a + b$ hat weiterhin kein kleinstes Element:
 
@@ -350,7 +354,9 @@
 
     Sie ist nicht identisch zu den rationalen Zahlen, da sie nur positive Elemente enthalten kann.
 
-    Sie hat kein kleinstes Element.
+    Sie hat kein kleinstes Element, da weder A noch B ein kleinstes Element haben.
+    Das Infimum von $A \times B$ ist das Produkt der Infima von A und B, es ist aber
+    nicht in $A \times B$ enthalten. Wir können aber beliebig nahe Zahlen an diese Infimum konstruieren.
 
     Wir können nun die Multiplikation wie folgend mithilfe obiger $\times$-Operation definieren,
     dafür verwenden wir folgende Fallunterscheidung:
@@ -720,24 +726,23 @@
 
     \section{Literaturverzeichnis}
 
-    - Courant, R. and Robbins, H. `Alternative Methods of Defining Irrational Numbers. Dedekind Cuts.', 2. Auflage,
-    S. 71f
+    - Courant, R. and Robbins, H. `Alternative Methods of Defining Irrational Numbers. \hspace*{1mm} Dedekind Cuts.', 2. Auflage, S. 71f
 
-    - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf, zuletzt abgerufen am 26.10.2021
+    - http://www.math.columbia.edu/~harris/2000/2016Dedcuts.pdf, zuletzt abgerufen \hspace*{1mm} am 26.10.2021
 
-    - Dedekind Cuts. Brilliant.org. Abgerufen am 3.11.2021, 9:30, https://brilliant.org/wiki/dedekind-cuts/
+    - Dedekind Cuts. Brilliant.org. Abgerufen am 3.11.2021, 9:30, \newline \hspace*{1mm} https://brilliant.org/wiki/dedekind-cuts/
 
-    - Prof. Dr. Siegfried Echterhoff: `Ergänzung zur Vorlesung Analysis I WS08/0, Konstruktion von $\mathbb{R}$',
-    https://ivv5hpp.uni-muenster.de/u/echters/Analysis/AnalysisI/ $\mspace{8mu}$ Skript/Konstruktion\_reelle\_Zahlen.pdf,
+    - Prof. Dr. Siegfried Echterhoff: `Ergänzung zur Vorlesung Analysis I WS08/0, \newline \hspace*{1mm} Konstruktion von $\mathbb{R}$',
+    https://ivv5hpp.uni-muenster.de/u/echters/Analysis/ \newline \hspace*{1mm} AnalysisI/Skript/Konstruktion\_reelle\_Zahlen.pdf,
     zuletzt abgerufen am 23.10.2021
 
-    - Uwe Storch, Hartmut Wiebe: `Grundkonzepte der Mathematik: Mengentheoretische, algebraische, topologische Grundlagen
-    sowie reelle und komplexe Zahlen', Springer Spektrum Verlag, 2017
+    - Uwe Storch, Hartmut Wiebe: `Grundkonzepte der Mathematik: \newline \hspace*{1mm} Mengentheoretische, algebraische, topologische Grundlagen
+    sowie reelle und \newline \hspace*{1mm} komplexe Zahlen', Springer Spektrum Verlag, 2017
 
-    - Alexander Toller, Dennis Chen, Freya Edholm: `Proofs in Competition Math: Vol. 1', Version 1.1,
+    - Alexander Toller, Dennis Chen, Freya Edholm: `Proofs in Competition Math: \newline \hspace*{1mm} Vol. 1', Version 1.1,
     Unabhängig veröffentlicht, 2019
 
-    - Richard Dedekind, `Stetigkeit und Irrationale Zahlen', Vieweg+Teubner Verlag, 1960
+    - Richard Dedekind, `Stetigkeit und Irrationale Zahlen', Vieweg+Teubner Verlag, \hspace*{1mm} 1960
 
     \newpage
 
